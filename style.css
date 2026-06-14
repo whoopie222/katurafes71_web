@@ -1,0 +1,154 @@
+/* リセット */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 全体 */
+
+body {
+  font-family: "Shippori Mincho", serif;
+}
+
+/* ===================================================
+   1. ページ全体の背景（2枚目の画像を完全固定）
+   =================================================== */
+body {
+  margin: 0;
+  padding: 0;
+
+  /* ★ここに2枚目の画像を指定して、画面全体に固定します */
+  background-image: url("/img/bluesky.png"); /* 2枚目の画像パス */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* 常に画面の最背面に固定 */
+}
+
+/* ===================================================
+   2. topセクション（1枚目の背景：一緒に動く）
+   =================================================== */
+.top {
+  /* ★ここに1枚目の画像を指定（固定しない） */
+  background-image: url("/img/key_visual.png"); /* 1枚目の画像パス */
+  background-size: cover;
+  background-position: center;
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2; /* 2枚目の背景や他のセクションより手前に表示 */
+}
+
+/* ===================================================
+   3. theme以降のセクション（2枚目の背景を透かす設定）
+   =================================================== */
+/* theme以降のセクションは、背景を「透明」にすることで、
+   bodyに設定した2枚目の画像が常に後ろに透けて見えるようになります */
+.theme,
+.pickupevents,
+.chairperson-message,
+.doors,
+.access {
+  position: relative;
+  z-index: 1;
+  padding: 80px 20px;
+  background: transparent; /* 背景を透明にする */
+
+  /* 文字を読みやすくするための共通設定 */
+  color: #ffffff; /* デザインに合わせて黒（#000）など調整してください */
+  text-align: center;
+}
+
+/* （参考）文字の読みやすさの調整 */
+.top .hero-content {
+  color: #ffffff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.hero-content {
+  text-align: right;
+}
+/* ナビ */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  backdrop-filter: blur(10px);
+
+  z-index: 1000;
+}
+
+section {
+  min-height: 100vh;
+  padding: 120px 80px;
+}
+
+nav {
+  height: 70px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 0 40px;
+}
+
+nav ul {
+  display: flex;
+  gap: 24px;
+
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Hero */
+
+.hero {
+  height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero-theme {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.catchphrase {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.hero-date {
+  font-size: 1rem;
+}
