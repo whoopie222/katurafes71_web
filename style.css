@@ -31,17 +31,26 @@ h3 {
 
 /* back ground */
 .top {
-  /* ★ここに1枚目の画像を指定（固定しない） */
-  background-image: url("/img/key_visual.png"); /* 1枚目の画像パス */
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(10, 30, 60, 0.6) 0%,
+      rgba(30, 80, 150, 0.2) 60%,
+      rgba(233, 244, 255, 0) 100%
+    ),
+    url("/img/key_visual.png");
+
   background-size: cover;
   background-position: center;
+
+  background-attachment: fixed;
 
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 2; /* 2枚目の背景や他のセクションより手前に表示 */
+  z-index: 2;
 }
 
 .theme,
@@ -56,6 +65,49 @@ h3 {
 
   /* 文字を読みやすくするための共通設定 */
   color: #ffffff; /* デザインに合わせて黒（#000）など調整してください */
+  text-align: center;
+}
+/* ナビ */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  backdrop-filter: blur(10px);
+
+  z-index: 1000;
+}
+
+nav {
+  height: 70px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 0 40px;
+}
+
+nav ul {
+  display: flex;
+  gap: 24px;
+
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -74,7 +126,7 @@ h3 {
 .hero-number {
   color: #ffffff;
   font-size: 40px;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
 }
 .hero-title {
   color: #ffffff;
@@ -84,11 +136,11 @@ h3 {
 .hero-theme {
   color: #ffffff;
   font-size: 40px;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
 }
 .hero-catch {
   color: #ffffff;
-  font-size: 40px;
+  font-size: 32px;
 }
 
 .hero-date {
@@ -136,43 +188,6 @@ h3 {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-}
-/* ナビ */
-
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-
-  background: rgba(255, 255, 255, 0.7);
-
-  backdrop-filter: blur(10px);
-
-  z-index: 1000;
-}
-
-nav {
-  height: 70px;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  padding: 0 40px;
-}
-
-nav ul {
-  display: flex;
-  gap: 24px;
-
-  list-style: none;
-}
-
-nav a {
-  text-decoration: none;
-  color: #2c3e50;
 }
 
 /* theme*/
@@ -361,3 +376,5 @@ nav a {
   font-size: 48px;
   padding-left: 30px;
 }
+
+/* fade */
