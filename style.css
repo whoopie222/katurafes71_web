@@ -1,4 +1,4 @@
-/* リセット */
+/* reset */
 
 * {
   margin: 0;
@@ -6,7 +6,13 @@
   box-sizing: border-box;
 }
 
-/* 全体 */
+/* base */
+section {
+  min-height: 100vh;
+  padding: 120px 80px;
+  justify-content: center;
+  align-content: center;
+}
 
 body {
   font-family: "Shippori Mincho", serif;
@@ -16,9 +22,14 @@ body {
   background-attachment: fixed;
 }
 
-/* ===================================================
-   2. topセクション（1枚目の背景：一緒に動く）
-   =================================================== */
+p,
+h1,
+h2,
+h3 {
+  color: #2c3e50;
+}
+
+/* back ground */
 .top {
   /* ★ここに1枚目の画像を指定（固定しない） */
   background-image: url("/img/key_visual.png"); /* 1枚目の画像パス */
@@ -33,11 +44,6 @@ body {
   z-index: 2; /* 2枚目の背景や他のセクションより手前に表示 */
 }
 
-/* ===================================================
-   3. theme以降のセクション（2枚目の背景を透かす設定）
-   =================================================== */
-/* theme以降のセクションは、背景を「透明」にすることで、
-   bodyに設定した2枚目の画像が常に後ろに透けて見えるようになります */
 .theme,
 .pickupevents,
 .chairperson-message,
@@ -53,6 +59,47 @@ body {
   text-align: center;
 }
 
+/* top */
+.hero-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-title-group {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero-number {
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0.3em;
+}
+.hero-title {
+  color: #ffffff;
+  font-size: 64px;
+  letter-spacing: 0.5em;
+}
+.hero-theme {
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0.3em;
+}
+.hero-catch {
+  color: #ffffff;
+  font-size: 40px;
+}
+
+.hero-date {
+  color: #ffffff;
+  font-size: 40px;
+}
+
+.date {
+  color: #ffffff;
+  font-size: 24px;
+}
 /* （参考）文字の読みやすさの調整 */
 .top .hero-content {
   color: #ffffff;
@@ -104,13 +151,6 @@ header {
   z-index: 1000;
 }
 
-section {
-  min-height: 100vh;
-  padding: 120px 80px;
-  justify-content: center;
-  align-content: center;
-}
-
 nav {
   height: 70px;
 
@@ -132,38 +172,110 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: black;
+  color: #2c3e50;
 }
 
-/* Hero */
+/* theme*/
+.theme-h {
+  color: #ffffff;
+  font-size: 48px;
+  letter-spacing: 0.3em;
+  margin-bottom: 30px;
+}
+.theme-centence {
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0.3em;
+  line-height: 2.5;
+}
 
-.hero {
-  height: 100vh;
-
+/* pickup events */
+.event-header {
   display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 30px;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-flex;
+  margin-right: auto;
+  margin-left: 0;
+}
 
+.event-al {
+  font-size: 48px;
+  padding-left: 30px;
+}
+.pickupevent-cards {
+  display: flex;
   justify-content: center;
-
-  align-items: center;
-
-  text-align: center;
 }
 
-.hero-content h2 {
-  font-size: 4rem;
-  margin-bottom: 20px;
+/* 委員長より */
+.chairperson-message {
+  max-width: 35%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+  text-align: left;
+  width: 90%;
+}
+.message-text {
+  font-size: 16px;
+  color: #2c3e50;
+}
+.message-role {
+  font-size: 16px;
+  color: #2c3e50;
+}
+.message-name {
+  font-size: 24px;
+  color: #2c3e50;
+}
+.chairperson {
+  text-align: right;
 }
 
-.hero-theme {
-  font-size: 2rem;
-  margin-bottom: 16px;
+/* door */
+.doors {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 
-.catchphrase {
-  font-size: 1.5rem;
-  margin-bottom: 16px;
-}
+/* access */
+.access-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 30px;
+  margin-bottom: 40px;
+  border-bottom: 3px solid;
 
-.hero-date {
-  font-size: 1rem;
+  position: relative;
+  display: inline-flex;
+
+  align-self: flex-start;
+}
+.access-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+
+  width: calc(100% + 20px);
+  height: 3px;
+  /* かすれ設定 */
+  background: linear-gradient(
+    to right,
+    rgba(0, 182, 182, 1) 0%,
+    rgba(0, 182, 182, 0.7) 50%,
+    rgba(0, 182, 182, 0) 100%
+  );
+}
+.access-al {
+  font-size: 48px;
+  padding-left: 30px;
 }
