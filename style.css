@@ -10,20 +10,10 @@
 
 body {
   font-family: "Shippori Mincho", serif;
-}
-
-/* ===================================================
-   1. ページ全体の背景（2枚目の画像を完全固定）
-   =================================================== */
-body {
-  margin: 0;
-  padding: 0;
-
-  /* ★ここに2枚目の画像を指定して、画面全体に固定します */
-  background-image: url("/img/bluesky.png"); /* 2枚目の画像パス */
+  background-image: url(/img/bluesky.png);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* 常に画面の最背面に固定 */
+  background-attachment: fixed;
 }
 
 /* ===================================================
@@ -70,12 +60,35 @@ body {
   text-align: center;
 }
 
+.top {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  padding: 0 8vw 8vh;
+}
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 32px;
+}
+.hero-date-group {
+  text-align: center;
+}
 .title {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
 .hero-content {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 /* ナビ */
 
@@ -94,6 +107,8 @@ header {
 section {
   min-height: 100vh;
   padding: 120px 80px;
+  justify-content: center;
+  align-content: center;
 }
 
 nav {
