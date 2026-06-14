@@ -206,9 +206,31 @@ nav a {
   font-size: 48px;
   padding-left: 30px;
 }
+
 .pickupevent-cards {
   display: flex;
   justify-content: center;
+  gap: 20px;
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  width: 200px; /* 【1】カードの横幅を固定する（お好みの太さに） */
+  background-color: #e9f4ff; /* 背景を白にして見やすく */
+  border: 1px solid #768ca2; /* 輪郭がわかりやすいように薄い線を引く */
+  border-radius: 100px 100px 0px 0px;
+  overflow: hidden;
+}
+
+.pickup-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.event-body {
+  padding: 20px;
 }
 
 /* 委員長より */
