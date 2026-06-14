@@ -285,8 +285,47 @@ nav a {
 /* door */
 .doors {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: 30px;
+}
+
+.door {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  height: 340px;
+  background-color: #00b6b6;
+  border: 1px solid #768ca2;
+  border-radius: 120px 120px 0px 0px;
+  overflow: hidden;
+  transition:
+    transform 0.6s ease,
+    box-shadow 0.6s ease; /* 0.6秒で滑らかに動かす */
+  transform-origin: left center; /* 蝶番（回転軸）を「左端」に設定 */
+  cursor: pointer; /* マウスを乗せたときに指マークにする */
+}
+
+.doors p {
+  font-family: "M PLUS 1p", sans-serif;
+}
+
+.door img {
+  padding-top: 50px;
+}
+.door-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.doors {
+  display: flex;
+  justify-content: center;
+}
+
+.door-wrapper:hover .door {
+  transform: rotateY(-25deg); /* Y軸を中心に手前に65度回転（開く） */
+  box-shadow: -10px 15px 25px rgba(0, 0, 0, 0.15); /* 開いたときにできる影（立体感アップ） */
 }
 
 /* access */
