@@ -68,3 +68,11 @@ window.addEventListener("scroll", () => {
 
   topSection.style.setProperty("--hero-opacity", opacity);
 });
+
+/* humberger */
+const hamburger = document.getElementById("hamburger");
+const menuPanel = document.getElementById("menu-panel");
+
+hamburger.addEventListener("click", () => {
+  menuPanel.classList.toggle("active");
+});
