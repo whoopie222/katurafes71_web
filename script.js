@@ -31,6 +31,21 @@ window.addEventListener("scroll", () => {
     doorContainer.style.opacity = p;
 
     doorContainer.style.transform = `scale(${0.2 + p * 0.8})`;
+
+    doorContainer.style.filter = `blur(${25 - p * 25}px)`;
+  }
+  const themeStart = themeSection.offsetTop;
+
+  const themeEnd = themeStart + themeSection.offsetHeight;
+
+  const themeProgress = (window.scrollY - themeStart) / (themeEnd - themeStart);
+
+  if (themeProgress > 0.3) {
+    const p = Math.min((themeProgress - 0.3) / 0.7, 1);
+
+    themeContent.style.opacity = 1 - p;
+
+    themeContent.style.transform = `translateY(${-30 * p}px)`;
   }
 
   if (progress >= 0.5) {
