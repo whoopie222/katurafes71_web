@@ -122,6 +122,7 @@ nav ul {
 nav a {
   text-decoration: none;
   color: #2c3e50;
+  font-weight: 300;
 }
 
 .logo {
@@ -405,17 +406,31 @@ main {
 
 /* pickup events */
 .event-header {
-  display: flex;
-  justify-content: flex-start;
+  display: inline-flex; /* フレックスアイテムなので実質 flex。下記 align-self とセットで効かせる */
   align-items: baseline;
   gap: 30px;
   margin-bottom: 40px;
   position: relative;
-  display: inline-flex;
-  margin-right: auto;
-  margin-left: 0;
+  align-self: flex-start; /* ← ② 対策：親に引き伸ばされず内容幅に収める（必須） */
+  /* border-bottom: 3px solid; ← 削除：均一な白線が先細りを邪魔するため */
 }
+.event-header::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
 
+  width: calc(100% + 20px);
+  height: 3px;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 182, 182, 1) 0%,
+    rgba(0, 182, 182, 0.8) 50%,
+    rgba(0, 182, 182, 0) 100%
+  );
+}
 .event-al {
   font-size: 48px;
   padding-left: 30px;
@@ -630,17 +645,19 @@ h3 {
 }
 
 .access-header {
-  display: inline-flex;
+  display: inline-flex; /* フレックスアイテムなので実質 flex。下記 align-self とセットで効かせる */
   align-items: baseline;
   gap: 30px;
   margin-bottom: 40px;
   position: relative;
+  align-self: flex-start; /* ← ② 対策：親に引き伸ばされず内容幅に収める（必須） */
+  /* border-bottom: 3px solid; ← 削除：均一な白線が先細りを邪魔するため */
 }
-
 .access-header::after {
   content: "";
   position: absolute;
   left: -10px;
+  right: -10px;
   bottom: -10px;
 
   width: calc(100% + 20px);
