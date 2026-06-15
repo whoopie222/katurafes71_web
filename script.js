@@ -40,9 +40,9 @@ window.addEventListener("scroll", () => {
 
     const deg = p * 95;
 
-    leftDoor.style.transform = `rotateY(${-deg}deg)`;
+    leftDoor.style.transform = `rotateY(${deg}deg)`;
 
-    rightDoor.style.transform = `rotateY(${deg}deg)`;
+    rightDoor.style.transform = `rotateY(${-deg}deg)`;
   }
 
   if (progress >= 0.7) {

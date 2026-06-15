@@ -152,7 +152,7 @@ nav a {
   text-align: center;
 }
 
-/* theme & door-animation */
+/* theme */
 .theme-h {
   font-family: "Shippori Mincho", serif;
   color: #ffffff;
@@ -234,7 +234,7 @@ nav a {
 
   background: white;
 
-  transform-origin: right center;
+  transform-origin: left center;
 }
 
 .door-right {
@@ -243,7 +243,7 @@ nav a {
 
   background: white;
 
-  transform-origin: left center;
+  transform-origin: right center;
 }
 
 .festival-message {
@@ -275,6 +275,40 @@ main {
   z-index: 10;
   text-align: center;
   pointer-events: none;
+}
+
+/*add door effect*/
+.door-left,
+.door-right {
+  background: rgba(255, 255, 255, 0.85);
+
+  backdrop-filter: blur(8px);
+
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+/*3D */
+.door-left,
+.door-right {
+  box-shadow:
+    inset 0 0 40px rgba(255, 255, 255, 0.4),
+    inset -20px 0 40px rgba(0, 0, 0, 0.15);
+}
+/*bright*/
+.festival-message::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+
+  z-index: -1;
 }
 
 /* pickup events */
