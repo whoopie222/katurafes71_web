@@ -624,9 +624,10 @@ h3 {
 }
 .transportation-card {
   background-color: rgba(255, 255, 255, 0.7);
-  padding: 20px;
-  margin: 10px;
-  width: 500px;
+  padding: 25px;
+  margin-top: 20px;
+  width: 430px;
+  gap: 10px;
 }
 
 .access-texts {
@@ -636,6 +637,8 @@ h3 {
 .access-contents {
   display: flex;
   justify-content: center;
+  align-items: stretch;
+  margin: 150px;
 }
 
 .access {
@@ -643,8 +646,29 @@ h3 {
   justify-content: flex-start;
 }
 
-.university {
-  padding: 30px;
+.university-info {
+  padding-left: 30px;
+}
+.university-info h3 {
+  font-size: 32px;
+}
+.university-info p {
+  font-size: 20px;
+}
+.transportation-card h4 {
+  font-size: 20px;
+  font-family: "M PLUS 1p", sans-serif;
+  color: #2c3e50;
+  text-underline-position: below;
+}
+
+.access-texts,
+.access-map {
+  flex: 1;
+}
+.access-map iframe {
+  width: 100%;
+  height: 100%;
 }
 
 /* footer */
