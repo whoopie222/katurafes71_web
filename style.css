@@ -114,7 +114,7 @@ nav {
 
 nav ul {
   display: flex;
-  gap: 24px;
+  gap: 40px;
   list-style: none;
 }
 
@@ -452,6 +452,9 @@ main {
 }
 
 /* pickup events */
+.gothic-h {
+  padding-right: 30px;
+}
 .event-header {
   display: inline-flex; /* フレックスアイテムなので実質 flex。下記 align-self とセットで効かせる */
   align-items: baseline;
