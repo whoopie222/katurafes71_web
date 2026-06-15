@@ -18,10 +18,10 @@ section {
 
 body {
   font-family: "Shippori Mincho", serif;
-  background-image: url(/img/bluesky.png);
+  background-image: url("./img/bluesky.webp");
   background:
     linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-    url("/img/bluesky.png");
+    url("./img/bluesky.webp");
   background-size: cover;
   background-position: center;
 }
@@ -59,7 +59,7 @@ h3 {
       rgba(30, 80, 150, 0.2) 65%,
       rgba(10, 30, 60, 0.65) 100%
     ),
-    url("/img/key_visual.png");
+    url("./img/key_visual.webp");
 
   background-size: cover;
   background-position: center;
