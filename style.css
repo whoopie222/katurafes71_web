@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: 1px solid red;
 }
 
 /* base */
@@ -18,9 +19,11 @@ section {
 body {
   font-family: "Shippori Mincho", serif;
   background-image: url(/img/bluesky.png);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    url("/img/bluesky.png");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
 }
 
 p,
@@ -28,16 +31,6 @@ h1,
 h2,
 h3 {
   color: #2c3e50;
-}
-
-body {
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-    url("/img/bluesky.png");
-
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
 /* background / top */
@@ -157,6 +150,54 @@ nav a {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+.dropdown {
+  position: relative;
+  list-style: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  min-width: 180px;
+
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+
+  list-style: none;
+  padding: 10px 0;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 /* top contents */
