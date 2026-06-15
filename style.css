@@ -30,6 +30,16 @@ h3 {
   color: #2c3e50;
 }
 
+body {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    url("/img/bluesky.png");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 /* background / top */
 .top {
   background-image:
