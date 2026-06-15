@@ -57,3 +57,14 @@ window.addEventListener("scroll", () => {
     festivalMessage.style.opacity = 0;
   }
 });
+
+/* top&theme */
+const topSection = document.querySelector(".top");
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+
+  const opacity = Math.max(0, 1 - scrollY / 600);
+
+  topSection.style.setProperty("--hero-opacity", opacity);
+});
