@@ -1,5 +1,4 @@
 /* reset */
-
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +9,8 @@
 section {
   min-height: 100vh;
   padding: 120px 80px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
 }
@@ -29,30 +30,28 @@ h3 {
   color: #2c3e50;
 }
 
-/* back ground */
+/* background / top */
 .top {
-  /* ★【修正】左上から右下に向かってグラデーションをかける */
   background-image:
     linear-gradient(
       135deg,
-      /* 斜め（左上から右下）の角度を指定 */ rgba(233, 244, 255, 0) 0%,
-      /* 左上：完全に透明（背景画像がクリアに見える） */ rgba(233, 244, 255, 0)
-        45%,
-      /* 画面の半分（45%）くらいまではずっと透明をキープ */
+      rgba(233, 244, 255, 0) 0%,
+      rgba(233, 244, 255, 0) 45%,
       rgba(30, 80, 150, 0.2) 65%,
-      /* じわ〜っと青みがかり始める */ rgba(10, 30, 60, 0.65) 100%
-        /* 右下：文字が乗る部分はしっかり濃いネイビーにする */
+      rgba(10, 30, 60, 0.65) 100%
     ),
     url("/img/key_visual.png");
 
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* パララックス用（前回のまま） */
+  background-attachment: fixed;
 
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0 8vw 8vh;
   position: relative;
   z-index: 2;
 }
@@ -65,42 +64,32 @@ h3 {
   position: relative;
   z-index: 1;
   padding: 80px 20px;
-  background: transparent; /* 背景を透明にする */
-
-  /* 文字を読みやすくするための共通設定 */
-  color: #ffffff; /* デザインに合わせて黒（#000）など調整してください */
+  background: transparent;
+  color: #ffffff;
   text-align: center;
 }
-/* ナビ */
 
+/* ナビ */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-
   background: rgba(255, 255, 255, 0.7);
-
   backdrop-filter: blur(10px);
-
   z-index: 1000;
 }
 
 nav {
   height: 70px;
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   padding: 0 40px;
 }
 
 nav ul {
   display: flex;
   gap: 24px;
-
   list-style: none;
 }
 
@@ -115,10 +104,12 @@ nav a {
   text-align: center;
 }
 
-/* top */
+/* top contents */
 .hero-wrapper {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 32px;
 }
 
 .hero-title-group {
@@ -156,45 +147,12 @@ nav a {
   color: #ffffff;
   font-size: 24px;
 }
-/* （参考）文字の読みやすさの調整 */
-.top .hero-content {
-  color: #ffffff;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  text-align: center;
-}
 
-.top {
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-
-  padding: 0 8vw 8vh;
-}
-.hero-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  gap: 32px;
-}
 .hero-date-group {
   text-align: center;
 }
-.title {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
 
-.hero-content {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-/* theme*/
+/* theme & door-animation */
 .theme-h {
   font-family: "Shippori Mincho", serif;
   color: #ffffff;
@@ -208,6 +166,115 @@ nav a {
   font-size: 24px;
   letter-spacing: 0.3em;
   line-height: 2.5;
+}
+
+.theme {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: transparent;
+}
+/* =====================
+   door transition
+===================== */
+
+.door-transition {
+  height: 400vh;
+  position: relative;
+}
+
+.door-stage {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.door-message {
+  position: absolute;
+  z-index: 30;
+  text-align: center;
+}
+
+.door-message p {
+  color: white;
+  font-size: 64px;
+  letter-spacing: 0.5em;
+}
+
+.door-container {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  opacity: 0;
+  transform: scale(0.2);
+
+  z-index: 20;
+
+  perspective: 1500px;
+}
+
+.door-left {
+  width: 50%;
+  height: 100%;
+
+  background: white;
+
+  transform-origin: right center;
+}
+
+.door-right {
+  width: 50%;
+  height: 100%;
+
+  background: white;
+
+  transform-origin: left center;
+}
+
+.festival-message {
+  position: absolute;
+
+  z-index: 10;
+
+  opacity: 0;
+
+  transform: scale(0.8);
+}
+
+.festival-message p {
+  color: white;
+
+  font-size: 64px;
+
+  letter-spacing: 0.3em;
+
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+main {
+  overflow: visible !important;
+}
+
+.theme-content-wrapper {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
 }
 
 /* pickup events */
@@ -244,22 +311,22 @@ nav a {
   overflow: hidden;
   transition:
     transform 0.6s ease,
-    box-shadow 0.6s ease; /* 0.6秒で滑らかに動かす */
-  transform-origin: left center; /* 蝶番（回転軸）を「左端」に設定 */
-  cursor: pointer; /* マウスを乗せたときに指マークにする */
+    box-shadow 0.6s ease;
+  transform-origin: left center;
+  cursor: pointer;
   position: relative;
 }
 .event-card::after {
   content: "";
   position: absolute;
-  top: 55%; /* 上からの位置（お好みで調整してください） */
+  top: 55%;
   right: 20px;
-  width: 20px; /* ドアノブの幅 */
-  height: 20px; /* ドアノブの高さ */
+  width: 20px;
+  height: 20px;
   background-color: #d4af37;
   border-radius: 50%;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
-  z-index: 10; /* 画像や文字の上に表示 */
+  z-index: 10;
   transition: transform 0.6s ease;
 }
 
@@ -270,12 +337,10 @@ nav a {
   left: 10px;
   right: 10px;
   bottom: 10px;
-  /* カードと同じ形状のアーチ型にする */
   border-radius: 105px 105px 0px 0px;
-  /* 内側に凹凸があるように見せる内向きの影（インセットシャドウ） */
   border: 1px solid rgba(118, 140, 162, 0.4);
   box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.08);
-  pointer-events: none; /* マウスイベントを邪魔しない */
+  pointer-events: none;
   z-index: 5;
 }
 
@@ -286,10 +351,7 @@ nav a {
 }
 
 .event-body {
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 30px;
+  padding: 20px 20px 30px 20px;
 }
 
 .event-body h3 {
@@ -298,21 +360,19 @@ nav a {
 }
 
 .door-wrapper {
-  perspective: 1000px; /* 奥行き感の設定（立体感を出す） */
+  perspective: 1000px;
 }
 
 .door-wrapper:hover .event-card {
-  transform: rotateY(-25deg); /* Y軸を中心に手前に65度回転（開く） */
-  box-shadow: -10px 15px 25px rgba(0, 0, 0, 0.15); /* 開いたときにできる影（立体感アップ） */
+  transform: rotateY(-25deg);
+  box-shadow: -10px 15px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* 委員長より */
 .chairperson-message {
   max-width: 35%;
-
   margin-left: auto;
   margin-right: auto;
-
   line-height: 1.8;
   letter-spacing: 0.1em;
   text-align: left;
@@ -351,23 +411,23 @@ nav a {
   overflow: hidden;
   transition:
     transform 0.6s ease,
-    box-shadow 0.6s ease; /* 0.6秒で滑らかに動かす */
-  transform-origin: left center; /* 蝶番（回転軸）を「左端」に設定 */
-  cursor: pointer; /* マウスを乗せたときに指マークにする */
+    box-shadow 0.6s ease;
+  transform-origin: left center;
+  cursor: pointer;
   position: relative;
 }
 
 .door::after {
   content: "";
   position: absolute;
-  top: 50%; /* 上からの位置（お好みで調整してください） */
+  top: 50%;
   right: 15px;
-  width: 20px; /* ドアノブの幅 */
-  height: 20px; /* ドアノブの高さ */
+  width: 20px;
+  height: 20px;
   background-color: #d4af37;
   border-radius: 50%;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
-  z-index: 10; /* 画像や文字の上に表示 */
+  z-index: 10;
   transition: transform 0.6s ease;
 }
 
@@ -378,10 +438,9 @@ nav a {
   left: 10px;
   right: 10px;
   bottom: 10px;
-  /* 内側に凹凸があるように見せる内向きの影（インセットシャドウ） */
   border: 1px solid rgba(118, 140, 162, 0.4);
   box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.08);
-  pointer-events: none; /* マウスイベントを邪魔しない */
+  pointer-events: none;
   z-index: 5;
 }
 
@@ -397,14 +456,9 @@ nav a {
   flex-direction: column;
 }
 
-.doors {
-  display: flex;
-  justify-content: center;
-}
-
 .door-wrapper:hover .door {
-  transform: rotateY(-25deg); /* Y軸を中心に手前に65度回転（開く） */
-  box-shadow: -10px 15px 25px rgba(0, 0, 0, 0.15); /* 開いたときにできる影（立体感アップ） */
+  transform: rotateY(-25deg);
+  box-shadow: -10px 15px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* access */
@@ -420,20 +474,16 @@ h3 {
   gap: 30px;
   margin-bottom: 40px;
   border-bottom: 3px solid;
-
   position: relative;
   display: inline-flex;
-
   align-self: flex-start;
 }
 .access-header h2::after {
   content: "";
   position: absolute;
   bottom: -10px;
-
   width: calc(100% + 20px);
   height: 3px;
-  /* かすれ設定 */
   background: linear-gradient(
     to right,
     rgba(0, 182, 182, 1) 0%,
@@ -450,5 +500,3 @@ h3 {
   padding: 20px;
   margin: 10px;
 }
-
-/* fade */
