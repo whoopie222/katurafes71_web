@@ -18,12 +18,18 @@ section {
 
 body {
   font-family: "Shippori Mincho", serif;
-  background-image: url("./img/bluesky.webp");
+
   background:
     linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
     url("./img/bluesky.webp");
+
+  background-repeat: no-repeat;
+  background-position: center top;
+
   background-size: cover;
-  background-position: center;
+  background-attachment: fixed;
+
+  background-attachment: fixed;
 }
 
 p,
