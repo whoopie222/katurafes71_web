@@ -510,10 +510,6 @@ main {
 .door img {
   padding-top: 50px;
 }
-.door-text {
-  display: flex;
-  flex-direction: column;
-}
 
 .door-wrapper:hover .door {
   transform: rotateY(-25deg);
