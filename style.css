@@ -455,15 +455,16 @@ main {
 /* pickup events */
 .gothic-h {
   padding-right: 30px;
+  font-family: "M PLUS 1p", sans-serif;
 }
 .event-header {
-  display: inline-flex; /* フレックスアイテムなので実質 flex。下記 align-self とセットで効かせる */
+  display: inline-flex;
   align-items: baseline;
+  left: 65px;
   gap: 30px;
   margin-bottom: 40px;
   position: relative;
-  align-self: flex-start; /* ← ② 対策：親に引き伸ばされず内容幅に収める（必須） */
-  /* border-bottom: 3px solid; ← 削除：均一な白線が先細りを邪魔するため */
+  align-self: flex-start;
 }
 .event-header::after {
   content: "";
@@ -517,7 +518,7 @@ main {
 .event-card::after {
   content: "";
   position: absolute;
-  top: 55%;
+  top: 60%;
   right: 20px;
   width: 20px;
   height: 20px;
@@ -618,7 +619,7 @@ main {
 
 .door {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 230px;
   height: 360px;
   background-color: #92d2d2;
@@ -629,6 +630,7 @@ main {
   transform-origin: left center;
   cursor: pointer;
   position: relative;
+  object-fit: contain;
   z-index: 1;
 }
 
@@ -701,14 +703,14 @@ h4 {
   display: inline-flex;
   align-items: baseline;
   gap: 30px;
-  margin-bottom: 40px;
   position: relative;
   align-self: flex-start;
+  margin-left: 150px;
 }
 .access-header::after {
   content: "";
   position: absolute;
-  left: -10px;
+  left: -2px;
   right: -10px;
   bottom: -10px;
 
@@ -743,7 +745,9 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  margin: 150px;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 30px;
 }
 
 .access {
