@@ -35,10 +35,23 @@
     <li><a href="#chairperson-message" class="gothic">委員長より</a></li>
     <li><a href="#access" class="gothic">アクセス</a></li>
   </ul></li>
-          <li class="dropdown"><a href="#events" class="gothic">企画</a></li>
-          <li class="dropdown"><a href="#timetable" class="gothic">タイムテーブル</a></li>
-          <li class="dropdown"><a href="#firsttime-visitor" class="gothic">初めての方へ</a></li>
-          <li class="dropdown"><a href="#qa" class="gothic">Q&A</a></li>
+          <li class="dropdown"><a href="#events" class="gothic">企画</a>
+            <ul class="dropdown-menu">
+          <li><a href="#recomend-event" class="gothic">おすすめ企画</a></li>
+          <li><a href="#search-event" class="gothic">企画検索</a></li></ul></li>
+          <li class="dropdown"><a href="#timetable" class="gothic">タイムテーブル</a>
+            <ul class="dropdown-menu">
+              <a href="#school-map" class="gothic">校内マップ</a></li>
+              <li><a href="#request" class="gothic">来場者の方へのお願い</a></li></ul></li>
+          <li class="dropdown"><a href="#firsttime-visitor" class="gothic">初めての方へ</a>
+            <ul class="dropdown-menu">
+             <li><a href="#katurafes-hitory" class="gothic">桂川祭とは</a></li>
+              <li><a href="#katurahes-state" class="gothic">例年の様子</a></li>
+              <li><a href="#katurafes71-state" class="gothic">今年の桂川祭</a></li>
+              <li><a href="#beloging" class="gothic">持ち物</a></li>
+            </ul></li>
+          <li class="dropdown"><a href="#qa" class="gothic">Q&A</a>
+            <ul class="dropdown-menu"></ul></li>
            <button class="hamburger" id="hamburger"><p class="gothic">その他</p></button>
         <div class="menu-panel" id="menu-panel">
           <a href="#pamphlet"><p class="gothic">パンフレット</p></a>
@@ -203,37 +216,60 @@
       </section>
     </main>
 
-    <footer>
-      <section id="footer" class="footer">
-          <div class="footer-container">
-            <a href="#katurafes"><p class="footer-h">桂川祭について</p></a>
-            <a href="#top">トップ</a>
-            <a href="#theme">テーマ</a>
-            <a href="#chairperson-message">委員長より</a>
-            <a href="#access">アクセス</a>
-          </div>
-          <div class="footer-container">
-            <a href="#events"><p class="footer-h">企画</p></a>
-            <a href="#recomend-event">おすすめ企画</a>
-            <a href="#search-event">企画検索</a>
-          </div>
-          <div class="footer-container">
-            <a href="#timetable"><p class="footer-h">タイムテーブル</p></a>
-            <a href="#school-map">校内マップ</a>
-            <a class="#request">来場者へのお願い</a>
-          </div>
-          <div class="footer-container">
-            <a href="#firsttime-visitor"><p class="footer-h">初めての方へ</p></a>
-            <a href="#katurafes-history">桂川祭について</a>
-            <a herf="#katurafes-state">例年の様子</a>
-            <a href="#katurafes71-state">今年の桂川祭</a>
-            <a href="#belongings">持ち物</a>
-          </div>
-          <div class="footer-container">
-            <a href="#qa"><p class="footer-h">Q&A</p></a>
-          </div>
-      </section>
-    </footer>
+    <footer class="footer">
+  <div class="footer-inner">
+
+    <div class="footer-column">
+      <a href="#katurafes"><h3>桂川祭について</h3></a>
+      <a href="#top">トップ</a>
+      <a href="#theme">テーマ</a>
+      <a href="#pickupevents">見どころ</a>
+      <a href="#chairperson-message">委員長より</a>
+      <a href="#access">アクセス</a>
+    </div>
+
+    <div class="footer-column">
+      <a href="#event"><h3>企画</h3></a>
+      <a href="#recomend-event">おすすめ企画</a>
+      <a href="#search-event">企画検索</a>
+      <a href="#timetable"><h3>タイムテーブル</h3></a>
+      <a href="#school-map">校内マップ</a>
+      <a href="#request">来場者の方へのお願い</a>
+    </div>
+
+    <div class="footer-column">
+      <a href="#firsttime-visitor"><h3>初めての方へ</h3></a>
+      <a href="#katurafes-fistory">桂川祭とは</a>
+      <a href="#katurafes-state">例年の様子</a>
+      <a href="#katurafes71-satate">今年の桂川祭</a>
+      <a href="#belongings">持ち物</a>
+    </div>
+
+    <div class="footer-column">
+      <a href="#qa"><h3>Q&A</h3></a>
+      <a href="#pamphlet"><h3>パンフレット</h3></a>
+      <a href="application"><h3>委員会企画参加者募集</h3></a>
+    </div>
+
+    <div class="footer-column">
+      <h3>お問い合わせ</h3>
+
+      <p class="mail">
+        katuragawafes.71@gmail.com
+      </p>
+
+      <div class="sns">
+        <a href="#news"><img src="./img/instagram.webp"></a>
+        <a href="#x"><img src="./img/x.webp"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="copyright">
+    © 2026 Katuragawasai Executive Committee, All rights reserved.
+  </p>
+</footer>
 
     <script src="script.js"></script>
   </body>
