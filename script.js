@@ -91,3 +91,17 @@ const menuPanel = document.getElementById("menu-panel");
 hamburger.addEventListener("click", () => {
   menuPanel.classList.toggle("active");
 });
+
+/* nav */
+const header = document.querySelector("header");
+const theme = document.querySelector("#theme");
+
+window.addEventListener("scroll", () => {
+  const themeTop = theme.offsetTop;
+
+  if (window.scrollY >= themeTop - 70) {
+    header.classList.add("show");
+  } else {
+    header.classList.remove("show");
+  }
+});
