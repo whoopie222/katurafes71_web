@@ -487,6 +487,7 @@ main {
   margin-bottom: 40px;
   position: relative;
   align-self: flex-start;
+  left: 65px;
 }
 .event-header::after {
   content: "";
@@ -605,9 +606,42 @@ main {
   z-index: 0;
 }
 
+.more-button-wrapper {
+  width: 1020px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.more-button-link {
+  display: inline-block;
+  padding: 8px 24px;
+  background-color: #08b8bf;
+  color: #ffffff;
+  font-family: "Shippori Mincho", serif;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 200;
+  letter-spacing: 0.05em;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.more-button-link:hover {
+  background-color: #06a3aa;
+  transform: translateY(-1px);
+}
+
+.pickupevents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* 委員長より */
 .chairperson-message {
-  max-width: 35%;
+  max-width: 45%;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.8;
@@ -641,7 +675,9 @@ main {
 
 .door {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 230px;
   height: 360px;
   background-color: #92d2d2;
@@ -685,10 +721,17 @@ main {
 
 .doors p {
   font-family: "M PLUS 1p", sans-serif;
+  text-align: center;
+  line-height: 1.8;
+  padding: 0 20px;
 }
 
 .door img {
-  padding-top: 50px;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  padding-top: 0;
+  margin-bottom: 24px;
 }
 
 .door-wrapper:hover .door {
@@ -720,6 +763,10 @@ h4 {
   font-family: "M PLUS 1p", sans-serif;
   letter-spacing: 0.1em;
   font-weight: 300;
+}
+
+.access h4 {
+  font-weight: 600;
 }
 
 .access-header {
@@ -758,6 +805,32 @@ h4 {
   margin-top: 20px;
   width: 430px;
   gap: 10px;
+
+  border-left: 2px solid #00b6b6;
+}
+
+.map-button-wrapper {
+  margin-top: 20px;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 8px 24px;
+  background-color: #08b8bf;
+  color: #ffffff;
+  font-family: "M PLUS 1p", sans-serif;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 200;
+  letter-spacing: 0.05em;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.button-link:hover {
+  background-color: #06a3aa;
+  transform: translateY(-1px);
 }
 
 .access-texts {
@@ -819,8 +892,9 @@ h4 {
   min-width: 180px;
 
   padding-left: 10px;
+  padding-bottom: 20px;
 
-  border-left: 1px solid rgba(255, 255, 255, 0.8);
+  border-left: 2px solid rgba(255, 255, 255, 0.8);
 
   display: flex;
   flex-direction: column;
