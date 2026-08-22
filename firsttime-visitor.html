@@ -3,81 +3,675 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第71回桂川祭</title>
 
+    <title>桂川祭とは｜第71回桂川祭</title>
+
+    <!-- 共通CSS -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- このページ専用CSS -->
+    <link rel="stylesheet" href="firsttime-visitor.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Shippori+Mincho&display=swap"
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body>
-    <header>
+
+  <body class="firsttime-page">
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="firsttime-header">
       <nav>
         <div class="logo">
           <p>第71回</p>
           <h1>桂川祭</h1>
         </div>
+
         <ul class="nav-bar">
           <li class="dropdown">
-            <a href="#katurafes" class="gothic">桂川祭について</a>
+            <a href="index.html" class="gothic">桂川祭について</a>
             <ul class="dropdown-menu">
-              <li><a href="#theme" class="gothic">テーマ</a></li>
-              <li><a href="#pickupevents" class="gothic">みどころ</a></li>
               <li>
-                <a href="#chairperson-message" class="gothic">委員長より</a>
+                <a href="index.html#theme" class="gothic">テーマ</a>
               </li>
-              <li><a href="#access" class="gothic">アクセス</a></li>
+              <li>
+                <a href="index.html#pickupevents" class="gothic">みどころ</a>
+              </li>
+              <li>
+                <a href="index.html#chairperson-message" class="gothic">
+                  委員長より
+                </a>
+              </li>
+              <li>
+                <a href="index.html#access" class="gothic">アクセス</a>
+              </li>
             </ul>
           </li>
+
           <li class="dropdown">
             <a href="event.html" class="gothic">企画</a>
             <ul class="dropdown-menu">
-              <li><a href="#recomend-event" class="gothic">おすすめ企画</a></li>
-              <li><a href="#search-event" class="gothic">企画検索</a></li>
+              <li>
+                <a href="event.html#recomend-event" class="gothic">
+                  おすすめ企画
+                </a>
+              </li>
+              <li>
+                <a href="event.html#search-event" class="gothic"> 企画検索 </a>
+              </li>
             </ul>
           </li>
+
           <li class="dropdown">
             <a href="timetable.html" class="gothic">タイムテーブル</a>
             <ul class="dropdown-menu">
-              <li><a href="#school-map" class="gothic">校内マップ</a></li>
               <li>
-                <a href="#request" class="gothic">来場者の方へのお願い</a>
+                <a href="timetable.html#school-map" class="gothic">
+                  校内マップ
+                </a>
+              </li>
+              <li>
+                <a href="timetable.html#request" class="gothic">
+                  来場者の方へのお願い
+                </a>
               </li>
             </ul>
           </li>
+
           <li class="dropdown">
-            <a href="firsttime-visitor.html" class="gothic">初めての方へ</a>
+            <a href="firsttime-visitor.html" class="gothic"> 初めての方へ </a>
             <ul class="dropdown-menu">
-              <li><a href="#katurafes-hitory" class="gothic">桂川祭とは</a></li>
-              <li><a href="#katurahes-state" class="gothic">例年の様子</a></li>
               <li>
-                <a href="#katurafes71-state" class="gothic">今年の桂川祭</a>
+                <a href="#katurafes-history" class="gothic"> 桂川祭とは </a>
               </li>
-              <li><a href="#beloging" class="gothic">持ち物</a></li>
+              <li>
+                <a href="#katurafes-state" class="gothic"> 例年の様子 </a>
+              </li>
+              <li>
+                <a href="#katurafes71-state" class="gothic"> 今年の桂川祭 </a>
+              </li>
+              <li>
+                <a href="#belonging" class="gothic"> 持ち物 </a>
+              </li>
             </ul>
           </li>
+
           <li class="dropdown">
             <a href="QandA.html" class="gothic">Q&A</a>
-            <ul class="dropdown-menu"></ul>
           </li>
+
           <li class="dropdown">
-            <a href="pamphlet.html"><p class="gothic">パンフレット</p></a>
-            <ul class="dropdown-menu"></ul>
+            <a href="pamphlet.html" class="gothic">パンフレット</a>
           </li>
         </ul>
       </nav>
     </header>
+
     <main>
-      <section id="katurafes_history" class="katurafes_history"></section>
-      <section id="katurafes_state" class="katurafes_state"></section>
-      <section id="katurafes71_state" class="katurafes71_state"></section>
-      <section id="belonging" class="belonging"></section>
+      <!-- =========================
+           HERO
+      ========================== -->
+      <section class="history-hero">
+        <div class="history-hero-overlay"></div>
+
+        <div class="history-hero-content">
+          <p class="history-hero-small">KATSURAGAWA FESTIVAL</p>
+
+          <h1>桂川祭とは</h1>
+
+          <p class="history-hero-year">1955 — 2026</p>
+
+          <p class="history-hero-catch">71年の歩みを、ひらく。</p>
+
+          <a href="#katurafes-history" class="scroll-button">
+            <span>SCROLL</span>
+            <span class="scroll-arrow">↓</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- =========================
+           桂川祭とは
+      ========================== -->
+      <section
+        id="katurafes-history"
+        class="history-section introduction-section"
+      >
+        <div class="section-inner two-column">
+          <div class="section-text">
+            <span class="section-number">01</span>
+
+            <h2>桂川祭とは</h2>
+
+            <div class="title-line"></div>
+
+            <p>
+              桂川祭は、都留文科大学が創立された1955（昭和30）年から続く、
+              都留文科大学の大学祭です。今年で71回目を迎えます。
+            </p>
+
+            <p>
+              「桂川祭」という名前は、都留文科大学がある都留市の中心を流れる
+              「桂川」に由来しています。
+            </p>
+
+            <p>
+              桂川の豊かな水が流れる「田原の滝」は、かつて松尾芭蕉も訪れ、
+              俳句を詠んだとされる、歴史と風情のある場所です。
+            </p>
+          </div>
+
+          <div class="history-photo history-photo-large">
+            <img src="./img/tahara-waterfall.webp" alt="桂川と田原の滝" />
+
+            <p class="photo-caption">桂川を流れる田原の滝</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+           昔の桂川祭
+      ========================== -->
+      <section class="history-section old-festival-section">
+        <div class="section-inner narrow">
+          <div class="section-heading-center">
+            <span class="section-number">02</span>
+
+            <p class="section-eyebrow">1955 —</p>
+
+            <h2>昔の桂川祭</h2>
+
+            <p class="section-lead">昭和30年から始まった桂川祭。</p>
+          </div>
+
+          <div class="old-festival-content">
+            <div class="old-festival-text">
+              <p>
+                昭和30年から始まった桂川祭。 当時から大学の一大イベントとして、
+                多くの学生で賑わっていたようです。
+              </p>
+
+              <p>
+                初期の桂川祭では、マラソン大会や仮装行列、
+                紅白歌合戦など、現在とは少し違った企画が行われていました。
+              </p>
+
+              <p>
+                また、当時からパンフレットも作成されており、
+                学生たちのアイデアと創造力、そして活気にあふれた
+                大学祭だったことがうかがえます。
+              </p>
+            </div>
+
+            <div class="old-pamphlet">
+              <div class="document-label">ARCHIVE</div>
+
+              <img
+                src="./img/history/pamphlet-11.webp"
+                alt="第11回桂川祭パンフレット"
+              />
+
+              <p>第11回桂川祭パンフレット</p>
+            </div>
+          </div>
+
+          <div class="old-photo">
+            <img
+              src="./img/history/kohaku.webp"
+              alt="当時の桂川祭で行われた紅白歌合戦"
+            />
+
+            <p class="photo-caption">当時の紅白歌合戦</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+           時代とともに
+      ========================== -->
+      <section class="history-section timeline-section">
+        <div class="section-inner">
+          <div class="section-heading-center">
+            <span class="section-number">03</span>
+
+            <h2>時代とともに変化する桂川祭</h2>
+
+            <p class="section-lead">
+              昭和・平成・令和。 桂川祭は時代とともに姿を変えてきました。
+            </p>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+
+              <p class="timeline-year">昭和</p>
+
+              <h3>はじまりの桂川祭</h3>
+
+              <p>
+                マラソン大会、仮装行列、紅白歌合戦など、
+                学生たちの活気にあふれた企画が行われていました。
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+
+              <p class="timeline-year">平成</p>
+
+              <h3>広がる大学祭</h3>
+
+              <p>
+                時代とともに企画の形も変化し、
+                ステージや屋台など、現在につながる大学祭の姿へ。
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+
+              <p class="timeline-year">令和</p>
+
+              <h3>新しい桂川祭</h3>
+
+              <p>
+                ステージ企画、教室展示、体験型企画など、
+                より多様な楽しみ方が生まれています。
+              </p>
+            </div>
+          </div>
+
+          <div class="change-message">
+            <p>
+              企画の内容だけでなく、パンフレットも紙媒体と
+              デジタルの双方で展開するなど、
+              桂川祭は時代に合わせて進化しています。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+           変わったもの・変わらないもの
+      ========================== -->
+      <section class="history-section unchanged-section">
+        <div class="section-inner">
+          <div class="section-heading-center">
+            <span class="section-number">04</span>
+
+            <h2>変わったもの、変わらないもの。</h2>
+          </div>
+
+          <div class="compare-grid">
+            <div class="compare-card changed">
+              <p class="compare-label">CHANGED</p>
+
+              <h3>変わったもの</h3>
+
+              <ul>
+                <li>企画の内容</li>
+                <li>大学祭の楽しみ方</li>
+                <li>情報発信の方法</li>
+                <li>パンフレットの形</li>
+              </ul>
+            </div>
+
+            <div class="compare-center">
+              <span>×</span>
+            </div>
+
+            <div class="compare-card unchanged">
+              <p class="compare-label">UNCHANGED</p>
+
+              <h3>変わらないもの</h3>
+
+              <ul>
+                <li>学生たちのアイデア</li>
+                <li>学生たちの創造力</li>
+                <li>大学祭をつくる楽しさ</li>
+                <li>最高の大学祭にしたいという想い</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="unchanged-message">
+            形が変わっても、<br />
+            学生たちの想いは、今も昔も変わりません。
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================
+           近年の桂川祭
+      ========================== -->
+      <section id="katurafes-state" class="history-section recent-section">
+        <div class="section-inner">
+          <div class="section-heading">
+            <span class="section-number">05</span>
+
+            <h2>近年の桂川祭</h2>
+
+            <p>現在の桂川祭には、 さまざまな企画が集まります。</p>
+          </div>
+
+          <!-- STAGE -->
+          <div class="recent-feature">
+            <div class="recent-feature-image">
+              <img src="./img/recent/stage.webp" alt="桂川祭のステージ企画" />
+            </div>
+
+            <div class="recent-feature-text">
+              <span>STAGE</span>
+
+              <h3>ステージ企画</h3>
+
+              <p>
+                特設スピリッツステージでは、 学生によるパフォーマンスや、
+                来場者の皆さまも参加できるビンゴや
+                カラオケなどの特別企画が行われ、
+                桂川祭を華やかに盛り上げました。
+              </p>
+            </div>
+          </div>
+
+          <!-- 芸能人企画 -->
+          <div class="recent-reverse">
+            <div class="recent-feature-text">
+              <span>SPECIAL</span>
+
+              <h3>芸能人企画</h3>
+
+              <p>
+                芸能人をお招きしてステージに出演していただく
+                「芸能人企画」は、桂川祭の目玉企画のひとつです。
+                毎年、多くの来場者がステージ前に集まり、
+                大きな盛り上がりを見せています。
+              </p>
+            </div>
+
+            <div class="recent-feature-image">
+              <img src="./img/recent/guest.webp" alt="桂川祭の芸能人企画" />
+            </div>
+          </div>
+
+          <!-- 学生団体 -->
+          <div class="photo-section">
+            <div class="photo-section-heading">
+              <span>STUDENT PROJECTS</span>
+
+              <h3>学生たちがつくる桂川祭</h3>
+
+              <p>
+                サークルや同好会をはじめとした学生団体による、
+                食べ物の屋台や教室展示、演奏会なども行われました。
+              </p>
+            </div>
+
+            <div class="photo-grid three">
+              <figure>
+                <img src="./img/recent/yatai.webp" alt="屋台出店" />
+                <figcaption>屋台出店</figcaption>
+              </figure>
+
+              <figure>
+                <img src="./img/recent/classroom.webp" alt="教室企画" />
+                <figcaption>教室企画</figcaption>
+              </figure>
+
+              <figure>
+                <img src="./img/recent/music.webp" alt="演奏会" />
+                <figcaption>演奏会</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- 特別企画 -->
+          <div class="photo-section special-project">
+            <div class="photo-section-heading">
+              <span>SPECIAL PROJECT</span>
+
+              <h3>実行委員による特別企画</h3>
+
+              <p>
+                来場者の皆さまが実際に遊んだり、 ものづくりを体験したりと、
+                会場にはたくさんの笑顔があふれました。
+              </p>
+            </div>
+
+            <div class="photo-grid three">
+              <figure>
+                <img
+                  src="./img/recent/beads.webp"
+                  alt="ビーズアクセサリー作り体験"
+                />
+                <figcaption>ビーズアクセサリー作り</figcaption>
+              </figure>
+
+              <figure>
+                <img
+                  src="./img/recent/mold-doll.webp"
+                  alt="モールドール作り体験"
+                />
+                <figcaption>モールドール作り</figcaption>
+              </figure>
+
+              <figure>
+                <img src="./img/recent/haunted-house.webp" alt="お化け屋敷" />
+                <figcaption>お化け屋敷</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+           70周年
+      ========================== -->
+      <section
+        id="katurafes71-state"
+        class="history-section anniversary-section"
+      >
+        <div class="anniversary-bg"></div>
+
+        <div class="anniversary-content">
+          <span class="section-number"> 06 </span>
+
+          <p class="section-eyebrow">70TH ANNIVERSARY</p>
+
+          <h2>
+            70周年、<br />
+            そして今年の桂川祭へ
+          </h2>
+
+          <p>
+            昨年は、都留文科大学の創立70周年を記念した
+            特別企画として、スカイランタンが実施されました。
+          </p>
+
+          <p>
+            参加者一人ひとりが想いや願いを描いたランタンが
+            夜空に浮かび、大学の夜空を温かな光で彩りました。
+          </p>
+
+          <p>
+            そして今年の桂川祭でも、昨年に引き続き、
+            大学創立70周年を記念した特別企画・展示を多数実施します。
+          </p>
+
+          <p class="anniversary-highlight">
+            昨年大きな盛り上がりを見せた スカイランタンも実施予定です。
+          </p>
+
+          <p>ぜひ、会場でその景色をお楽しみください。</p>
+        </div>
+      </section>
+
+      <!-- =========================
+           これからも
+      ========================== -->
+      <section id="belonging" class="history-section future-section">
+        <div class="future-overlay"></div>
+
+        <div class="future-content">
+          <span class="section-number"> 07 </span>
+
+          <h2>これからも続く桂川祭</h2>
+
+          <div class="future-line"></div>
+
+          <p>創立以来、多くの人に親しまれてきた桂川祭。</p>
+
+          <p>
+            昭和から平成、そして令和へ。
+            時代とともに企画や形は変わってきましたが、
+            文大生の力で最高の大学祭をつくりたいという想いは、
+            これからも変わりません。
+          </p>
+
+          <p>
+            学生、地域の皆さま、そして遠方からお越しくださる皆さま。
+            たくさんの人が集まり、笑顔になれる場所として、
+            桂川祭はこれからも進化し続けていきます。
+          </p>
+
+          <p>
+            子どもから大人まで、来場者の皆さまに楽しんでいただける
+            桂川祭となるよう、実行委員一同、企画・準備を進めています。
+          </p>
+
+          <p class="future-final">
+            今年も皆さまのご来場を、<br />
+            心よりお待ちしております。
+          </p>
+
+          <p class="next-door">NEXT DOOR</p>
+
+          <p class="next-door-message">71回目の桂川祭へ。</p>
+        </div>
+      </section>
+      <!-- =====================================================
+       08 桂川祭を楽しむために
+       ===================================================== -->
+      <section id="belonging" class="history-section belonging-section">
+        <div class="section-inner">
+          <div class="section-heading-center">
+            <span class="section-number">08</span>
+            <p class="section-eyebrow">FOR YOUR VISIT</p>
+
+            <h2>桂川祭を楽しむために</h2>
+
+            <p class="section-lead">はじめての方も、安心して楽しめるように。</p>
+          </div>
+
+          <div class="guide-grid">
+            <!-- 持ち物 -->
+            <article class="guide-card">
+              <div class="guide-icon">01</div>
+
+              <p class="guide-label">ITEMS</p>
+
+              <h3>あると便利なもの</h3>
+
+              <ul>
+                <li>スマートフォン</li>
+                <li>モバイルバッテリー</li>
+                <li>現金</li>
+                <li>エコバッグ</li>
+                <li>飲み物</li>
+              </ul>
+            </article>
+
+            <!-- 服装 -->
+            <article class="guide-card">
+              <div class="guide-icon">02</div>
+
+              <p class="guide-label">CLOTHING</p>
+
+              <h3>服装について</h3>
+
+              <ul>
+                <li>歩きやすい服装・靴がおすすめ</li>
+                <li>屋外企画もあるため天候に合わせた服装</li>
+                <li>10月末なので防寒対策も</li>
+              </ul>
+            </article>
+
+            <!-- 来場前 -->
+            <article class="guide-card guide-card-wide">
+              <div class="guide-icon">03</div>
+
+              <p class="guide-label">CHECK BEFORE VISIT</p>
+
+              <h3>来場前にチェック</h3>
+
+              <div class="check-links">
+                <a href="timetable.html">
+                  <span>TIME TABLE</span>
+                  タイムテーブル
+                  <b>→</b>
+                </a>
+
+                <a href="timetable.html#school-map">
+                  <span>MAP</span>
+                  校内マップ
+                  <b>→</b>
+                </a>
+
+                <a href="event.html">
+                  <span>EVENTS</span>
+                  企画一覧
+                  <b>→</b>
+                </a>
+
+                <a href="QandA.html">
+                  <span>Q&amp;A</span>
+                  よくある質問
+                  <b>→</b>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="guide-footer">
+            <p>準備ができたら、桂川祭へ。</p>
+
+            <a href="event.html" class="door-button">
+              <span>企画を見る</span>
+              <strong>→</strong>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-column">
+          <h3>第71回 桂川祭</h3>
+          <p>1955 — 2026</p>
+        </div>
+
+        <div class="footer-column">
+          <h3>MENU</h3>
+          <a href="index.html">桂川祭について</a>
+          <a href="event.html">企画</a>
+          <a href="timetable.html">タイムテーブル</a>
+          <a href="firsttime-visitor.html">初めての方へ</a>
+          <a href="QandA.html">Q&A</a>
+          <a href="pamphlet.html">パンフレット</a>
+        </div>
+      </div>
+
+      <p class="copyright">© 2026 第71回桂川祭実行委員会</p>
+    </footer>
   </body>
 </html>
