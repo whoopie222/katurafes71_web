@@ -61,6 +61,10 @@ header {
   width: 100%;
 
   z-index: 1000;
+
+  /* 他の共通スタイルで非表示になっているため上書きして常に表示する */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 nav {
@@ -1852,5 +1856,45 @@ nav {
 
   .enjoy-final-sub {
     font-size: 11px;
+  }
+}
+/* =========================================================
+   FIRSTTIME PAGE HEADER FIX
+   このページではPC・タブレットでナビゲーションを表示
+   ========================================================= */
+
+.firsttime-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.firsttime-header nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.firsttime-header .nav-bar {
+  display: flex !important;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+}
+
+/* PC・タブレット */
+@media (min-width: 901px) {
+  .firsttime-header .nav-bar {
+    display: flex !important;
+  }
+}
+
+/* スマートフォンでは非表示 */
+@media (max-width: 900px) {
+  .firsttime-header .nav-bar {
+    display: none !important;
   }
 }
