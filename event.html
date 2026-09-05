@@ -8,10 +8,8 @@
 
     <link rel="stylesheet" href="style.css" />
 
-    <!-- 今のサイトと同じフォント -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
       href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Shippori+Mincho&display=swap"
       rel="stylesheet"
@@ -19,10 +17,6 @@
   </head>
 
   <body class="events-page">
-    <!-- =====================
-       ヘッダー
-  ====================== -->
-
     <header class="events-header">
       <nav>
         <div class="logo">
@@ -32,160 +26,140 @@
 
         <ul class="nav-bar">
           <li class="dropdown">
-            <a href="index.html" class="gothic"> 桂川祭について </a>
+            <a href="index.html" class="gothic">桂川祭について</a>
           </li>
-
           <li class="dropdown">
-            <a href="events.html" class="gothic"> 企画 </a>
+            <a href="events.html" class="gothic">企画</a>
           </li>
-
           <li class="dropdown">
-            <a href="timetable.html" class="gothic"> タイムテーブル </a>
+            <a href="timetable.html" class="gothic">タイムテーブル</a>
           </li>
-
           <li class="dropdown">
-            <a href="firsttime-visitor.html" class="gothic"> 初めての方へ </a>
+            <a href="firsttime-visitor.html" class="gothic">初めての方へ</a>
           </li>
-
           <li class="dropdown">
-            <a href="QandA.html" class="gothic"> Q&A </a>
+            <a href="Q" class="gothic">Q&A</a>
           </li>
-
           <li class="dropdown">
-            <a href="pamphlet.html" class="gothic"> パンフレット </a>
+            <a href="pamphlet.html" class="gothic">パンフレット</a>
           </li>
         </ul>
       </nav>
     </header>
 
-    <!-- =====================
-       企画検索
-  ====================== -->
-
     <main class="search-page">
-      <!-- 左：検索エリア -->
-
       <aside class="search-sidebar">
-        <!-- 検索バー -->
-
-        <div class="search-box">
-          <input type="text" id="searchInput" placeholder="企画を検索" />
-        </div>
-
-        <!-- 日付 -->
-
-        <div class="filter-group">
-          <h3>日付</h3>
-
-          <div class="tag-list">
-            <button class="tag" data-tag="10/29">10/29</button>
-
-            <button class="tag" data-tag="10/30">10/30</button>
-
-            <button class="tag" data-tag="10/31">10/31</button>
+        <div class="search-sidebar-inner">
+          <div class="search-heading">
+            <span class="search-heading-small">第71回</span>
+            <h1>企画を探す</h1>
           </div>
-        </div>
 
-        <!-- 主催者 -->
-
-        <div class="filter-group">
-          <h3>主催者</h3>
-
-          <div class="tag-list">
-            <button class="tag" data-tag="大型企画">大型企画</button>
-
-            <button class="tag" data-tag="体験型企画">体験型企画</button>
-
-            <button class="tag" data-tag="装飾企画">装飾企画</button>
-
-            <button class="tag" data-tag="ステージ企画">ステージ企画</button>
-
-            <button class="tag" data-tag="団体">団体</button>
-
-            <button class="tag" data-tag="委員会企画">委員会企画</button>
-          </div>
-        </div>
-
-        <!-- おすすめ -->
-
-        <div class="filter-group">
-          <h3>おすすめ</h3>
-
-          <div class="tag-list">
-            <button class="tag" data-tag="子どもにおすすめ">
-              子どもにおすすめ
-            </button>
-
-            <button class="tag" data-tag="大人におすすめ">
-              大人におすすめ
+          <div class="search-box">
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="企画名・タグなどで検索"
+              autocomplete="off"
+            />
+            <button
+              type="button"
+              id="clearSearch"
+              class="clear-search"
+              aria-label="検索をクリア"
+            >
+              ×
             </button>
           </div>
-        </div>
 
-        <!-- コンテンツ -->
+          <div class="filter-groups">
+            <div class="filter-group">
+              <h3>日付</h3>
+              <div class="tag-list">
+                <button class="tag" data-tag="10/29">10/29</button>
+                <button class="tag" data-tag="10/30">10/30</button>
+                <button class="tag" data-tag="10/31">10/31</button>
+              </div>
+            </div>
 
-        <div class="filter-group">
-          <h3>コンテンツ</h3>
+            <div class="filter-group">
+              <h3>主催者</h3>
+              <div class="tag-list">
+                <button class="tag" data-tag="大型企画">大型企画</button>
+                <button class="tag" data-tag="体験型企画">体験型企画</button>
+                <button class="tag" data-tag="装飾企画">装飾企画</button>
+                <button class="tag" data-tag="ステージ企画">
+                  ステージ企画
+                </button>
+                <button class="tag" data-tag="団体">団体</button>
+                <button class="tag" data-tag="委員会企画">委員会企画</button>
+              </div>
+            </div>
 
-          <div class="tag-list">
-            <button class="tag" data-tag="食品">食品</button>
+            <div class="filter-group">
+              <h3>おすすめ</h3>
+              <div class="tag-list">
+                <button class="tag" data-tag="子どもにおすすめ">
+                  子どもにおすすめ
+                </button>
+                <button class="tag" data-tag="大人におすすめ">
+                  大人におすすめ
+                </button>
+              </div>
+            </div>
 
-            <button class="tag" data-tag="遊び">遊び</button>
+            <div class="filter-group">
+              <h3>コンテンツ</h3>
+              <div class="tag-list">
+                <button class="tag" data-tag="食品">食品</button>
+                <button class="tag" data-tag="遊び">遊び</button>
+                <button class="tag" data-tag="展示">展示</button>
+                <button class="tag" data-tag="パフォーマンス">
+                  パフォーマンス
+                </button>
+              </div>
+            </div>
 
-            <button class="tag" data-tag="展示">展示</button>
+            <div class="filter-group">
+              <h3>場所</h3>
+              <div class="tag-list">
+                <button class="tag" data-tag="ステージ">ステージ</button>
+                <button class="tag" data-tag="3号館">3号館</button>
+                <button class="tag" data-tag="5号館">5号館</button>
+                <button class="tag" data-tag="6号館">6号館</button>
+                <button class="tag" data-tag="テント">テント</button>
+                <button class="tag" data-tag="体育館">体育館</button>
+              </div>
+            </div>
 
-            <button class="tag" data-tag="パフォーマンス">
-              パフォーマンス
-            </button>
+            <div class="filter-group">
+              <h3>所要時間</h3>
+              <div class="tag-list">
+                <button class="tag" data-tag="〜10分">〜10分</button>
+                <button class="tag" data-tag="10〜20分">10〜20分</button>
+                <button class="tag" data-tag="20〜30分">20〜30分</button>
+                <button class="tag" data-tag="30〜40分">30〜40分</button>
+                <button class="tag" data-tag="40分以上">40分以上</button>
+                <button class="tag" data-tag="好きなだけ">好きなだけ</button>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <!-- 場所 -->
-
-        <div class="filter-group">
-          <h3>場所</h3>
-
-          <div class="tag-list">
-            <button class="tag" data-tag="ステージ">ステージ</button>
-
-            <button class="tag" data-tag="3号館">3号館</button>
-
-            <button class="tag" data-tag="5号館">5号館</button>
-
-            <button class="tag" data-tag="6号館">6号館</button>
-
-            <button class="tag" data-tag="テント">テント</button>
-
-            <button class="tag" data-tag="体育館">体育館</button>
-          </div>
-        </div>
-
-        <!-- 所要時間 -->
-
-        <div class="filter-group">
-          <h3>所要時間</h3>
-
-          <div class="tag-list">
-            <button class="tag" data-tag="〜10分">〜10分</button>
-
-            <button class="tag" data-tag="10〜20分">10〜20分</button>
-
-            <button class="tag" data-tag="20〜30分">20〜30分</button>
-
-            <button class="tag" data-tag="30〜40分">30〜40分</button>
-
-            <button class="tag" data-tag="40分以上">40分以上</button>
-
-            <button class="tag" data-tag="好きなだけ">好きなだけ</button>
-          </div>
+          <button type="button" id="resetFilters" class="reset-filters">
+            すべての企画を見る
+          </button>
         </div>
       </aside>
 
-      <!-- =====================
-         右：企画表示
-    ====================== -->
-
       <section class="contents-area">
+        <div class="contents-header">
+          <div>
+            <p class="contents-kicker">EVENTS</p>
+            <h2>企画一覧</h2>
+          </div>
+          <p id="resultCount" class="result-count"></p>
+        </div>
+
         <div id="projectList" class="project-grid"></div>
       </section>
     </main>
@@ -193,10 +167,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-<link
-  href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Shippori+Mincho&display=swap"
-  rel="stylesheet"
-/>

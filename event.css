@@ -1,0 +1,719 @@
+/* ==================================================
+   共通リセット
+================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Shippori Mincho", serif;
+  color: #2c3e50;
+}
+
+.gothic {
+  font-family: "M PLUS 1p", sans-serif;
+}
+
+/* ==================================================
+   共通ナビゲーション
+================================================== */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+header.show,
+.events-page header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+nav {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 0.95;
+  color: #2c3e50;
+}
+
+.logo p {
+  font-size: 12px;
+}
+
+.logo h1 {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-size: 14px;
+  font-weight: 300;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-bar a:hover {
+  color: #00a6a6;
+}
+
+/* ==================================================
+   企画検索ページ
+================================================== */
+
+.events-page {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.42)),
+    url("./img/bluesky.webp");
+
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+
+  overflow: hidden;
+}
+
+/* ==================================================
+   ページ全体
+   左：検索
+   右：企画一覧
+================================================== */
+
+.events-page .search-page {
+  width: 100%;
+  height: 100vh;
+  padding-top: 70px;
+
+  display: grid;
+  grid-template-columns: minmax(270px, 30%) minmax(0, 1fr);
+
+  overflow: hidden;
+}
+
+/* ==================================================
+   左：検索サイドバー
+
+   「スクロールしてタグを探す」のではなく、
+   タグを折り返して画面内に収める。
+================================================== */
+
+.events-page .search-sidebar {
+  min-width: 0;
+  height: calc(100vh - 70px);
+
+  padding: 28px 26px 24px;
+
+  background: rgba(255, 255, 255, 0.62);
+  border-right: 1px solid rgba(44, 62, 80, 0.12);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  overflow: hidden;
+}
+
+.search-sidebar-inner {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- 左見出し ---------- */
+
+.search-heading {
+  margin-bottom: 18px;
+}
+
+.search-heading-small {
+  display: block;
+  margin-bottom: 2px;
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #00a6a6;
+}
+
+.search-heading h1 {
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(25px, 2.3vw, 36px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #2c3e50;
+}
+
+/* ---------- 検索バー ---------- */
+
+.events-page .search-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.events-page .search-box input {
+  width: 100%;
+  height: 44px;
+
+  padding: 0 40px 0 16px;
+
+  border: 1px solid rgba(44, 62, 80, 0.25);
+  border-radius: 999px;
+
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  color: #2c3e50;
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.events-page .search-box input::placeholder {
+  color: #87929b;
+}
+
+.events-page .search-box input:focus {
+  border-color: #00b6b6;
+  box-shadow: 0 0 0 3px rgba(0, 182, 182, 0.12);
+}
+
+.clear-search {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+
+  width: 26px;
+  height: 26px;
+
+  transform: translateY(-50%);
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #7a858d;
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.clear-search:hover {
+  background: rgba(0, 182, 182, 0.12);
+  color: #00a6a6;
+}
+
+/* ---------- フィルター ---------- */
+
+.filter-groups {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 0;
+}
+
+.events-page .filter-group {
+  margin-bottom: 9px;
+}
+
+.events-page .filter-group:last-child {
+  margin-bottom: 0;
+}
+
+.events-page .filter-group h3 {
+  margin-bottom: 5px;
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+
+  color: #2c3e50;
+}
+
+/* ---------- タグ ---------- */
+
+.events-page .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.events-page .tag {
+  appearance: none;
+
+  padding: 5px 10px;
+
+  border: 1px solid rgba(44, 62, 80, 0.15);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  color: #52616b;
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 10px;
+  line-height: 1.2;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.events-page .tag:hover {
+  border-color: #00b6b6;
+  background: rgba(0, 182, 182, 0.1);
+  color: #008f8f;
+  transform: translateY(-1px);
+}
+
+.events-page .tag.active {
+  border-color: #00b6b6;
+  background: #00b6b6;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 182, 182, 0.18);
+}
+
+/* ---------- リセット ---------- */
+
+.reset-filters {
+  flex-shrink: 0;
+
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 12px;
+
+  border: 1px solid rgba(44, 62, 80, 0.16);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  color: #52616b;
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 10px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.reset-filters:hover {
+  background: #00b6b6;
+  color: #fff;
+}
+
+/* ==================================================
+   右：企画一覧
+================================================== */
+
+.events-page .contents-area {
+  min-width: 0;
+  height: calc(100vh - 70px);
+
+  padding: 34px clamp(24px, 4vw, 60px) 50px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 182, 182, 0.35) transparent;
+}
+
+.contents-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+}
+
+.contents-kicker {
+  margin-bottom: 2px;
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+
+  color: #00a6a6;
+}
+
+.contents-header h2 {
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #2c3e50;
+}
+
+.result-count {
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 12px;
+  color: #68757e;
+}
+
+/* ==================================================
+   企画グリッド
+
+   ここが「カードを引き抜いて左上から詰める」
+   ための重要部分。
+
+   JavaScript側では該当カードだけを
+   project-gridに追加しているので、
+   CSS Gridが自動的に左上から再配置する。
+================================================== */
+
+.events-page .project-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+
+  align-items: start;
+}
+
+/* ==================================================
+   企画カード
+================================================== */
+
+.events-page .project-card {
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: 42% 58%;
+
+  min-height: 210px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(44, 62, 80, 0.15);
+  border-radius: 2px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  box-shadow: 0 8px 24px rgba(44, 62, 80, 0.08);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.events-page .project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(44, 62, 80, 0.14);
+}
+
+/* ---------- 企画画像 ---------- */
+
+.events-page .project-image {
+  min-width: 0;
+  min-height: 210px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.72),
+    rgba(196, 226, 236, 0.55)
+  );
+
+  color: rgba(44, 62, 80, 0.45);
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.events-page .project-image.no-image span {
+  padding: 8px 12px;
+  border: 1px solid rgba(44, 62, 80, 0.15);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* ---------- 企画情報 ---------- */
+
+.events-page .project-info {
+  min-width: 0;
+  padding: 18px 18px 16px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.project-organizer {
+  margin-bottom: 5px;
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+
+  color: #00a6a6;
+}
+
+.events-page .project-info h2 {
+  margin-bottom: 8px;
+
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(17px, 1.5vw, 22px);
+  font-weight: 400;
+  line-height: 1.4;
+
+  color: #2c3e50;
+}
+
+.events-page .project-description {
+  margin-bottom: 12px;
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 11px;
+  line-height: 1.7;
+
+  color: #52616b;
+}
+
+/* ---------- 企画タグ ---------- */
+
+.events-page .project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+
+  margin-top: auto;
+}
+
+.events-page .project-tags span {
+  padding: 4px 7px;
+
+  border: 1px solid rgba(44, 62, 80, 0.1);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 8px;
+
+  color: #66737b;
+}
+
+/* ==================================================
+   該当なし
+================================================== */
+
+.events-page .no-result {
+  grid-column: 1 / -1;
+
+  min-height: 240px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  border: 1px dashed rgba(44, 62, 80, 0.2);
+  background: rgba(255, 255, 255, 0.45);
+
+  color: #68757e;
+  text-align: center;
+}
+
+.events-page .no-result p {
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 13px;
+}
+
+.no-result-button {
+  padding: 7px 15px;
+
+  border: 1px solid rgba(0, 182, 182, 0.35);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  color: #008f8f;
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+/* ==================================================
+   レスポンシブ
+================================================== */
+
+@media (max-width: 1100px) {
+  .nav-bar {
+    gap: 18px;
+  }
+
+  .nav-bar a {
+    font-size: 12px;
+  }
+
+  .events-page .search-page {
+    grid-template-columns: minmax(250px, 32%) minmax(0, 1fr);
+  }
+
+  .events-page .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .events-page {
+    overflow: auto;
+  }
+
+  nav {
+    padding: 0 20px;
+  }
+
+  .nav-bar {
+    gap: 10px;
+  }
+
+  .nav-bar li:nth-child(4),
+  .nav-bar li:nth-child(5),
+  .nav-bar li:nth-child(6) {
+    display: none;
+  }
+
+  .events-page .search-page {
+    height: auto;
+    min-height: 100vh;
+
+    display: block;
+
+    padding-top: 70px;
+
+    overflow: visible;
+  }
+
+  .events-page .search-sidebar {
+    width: 100%;
+    height: auto;
+
+    padding: 22px 20px;
+
+    border-right: 0;
+    border-bottom: 1px solid rgba(44, 62, 80, 0.12);
+
+    overflow: visible;
+  }
+
+  .search-sidebar-inner {
+    height: auto;
+  }
+
+  .filter-groups {
+    display: block;
+  }
+
+  .events-page .filter-group {
+    margin-bottom: 12px;
+  }
+
+  .events-page .contents-area {
+    height: auto;
+    overflow: visible;
+
+    padding: 28px 20px 50px;
+  }
+
+  .events-page .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .events-page .project-card {
+    grid-template-columns: 40% 60%;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-bar li:nth-child(3) {
+    display: none;
+  }
+
+  .events-page .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .events-page .project-image {
+    min-height: 150px;
+  }
+
+  .events-page .project-info {
+    min-height: 180px;
+  }
+}

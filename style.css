@@ -398,6 +398,81 @@ nav a {
   transform-origin: left center;
 }
 
+/* =====================
+   イベント（企画検索）ページ調整
+   - 左サイドバーを画面内に収め固定
+   - 右コンテンツのみスクロール
+   - 背景を bluesky にしてパララックス効果
+   ===================== */
+
+.events-page .search-page {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  align-items: start;
+  padding: 100px 40px;
+  height: calc(100vh - 80px);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.events-page .search-sidebar {
+  position: sticky;
+  top: 80px; /* header の高さに合わせる */
+  align-self: start;
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.events-page .contents-area {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 20px;
+}
+
+.events-page .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.events-page .search-sidebar .filter-group {
+  margin-bottom: 14px;
+}
+
+/* パララックス背景（トップページに近い挙動） */
+.events-page {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    url("./img/bluesky.webp");
+
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@media (max-width: 900px) {
+  .events-page .search-page {
+    display: block;
+    padding: 90px 20px;
+    height: auto;
+  }
+
+  .events-page .search-sidebar {
+    position: static;
+    height: auto;
+    overflow: visible;
+    margin-bottom: 18px;
+  }
+
+  .events-page .contents-area {
+    overflow: visible;
+  }
+}
+
 .door-right {
   width: 50%;
   height: 100%;
