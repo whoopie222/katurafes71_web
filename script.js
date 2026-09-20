@@ -375,3 +375,29 @@ if (searchInput && projectList) {
 
   displayProjects(projects);
 }
+
+/* ========================================
+   Q&A ACCORDION
+======================================== */
+
+const qaQuestions = document.querySelectorAll(".qa-question");
+
+qaQuestions.forEach((question) => {
+  question.addEventListener("click", () => {
+    const card = question.closest(".qa-card");
+
+    const isOpen = card.classList.contains("is-open");
+
+    /* 一度すべて閉じる */
+
+    document.querySelectorAll(".qa-card").forEach((item) => {
+      item.classList.remove("is-open");
+    });
+
+    /* クリックしたものだけ開く */
+
+    if (!isOpen) {
+      card.classList.add("is-open");
+    }
+  });
+});

@@ -3,26 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第71回桂川祭</title>
 
+    <title>Q&A｜第71回桂川祭</title>
+
+    <!-- 共通CSS -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Q&A専用CSS -->
+    <link rel="stylesheet" href="QandA.css" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Shippori+Mincho&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body>
+
+  <body class="qa-body">
+    <!-- =========================
+         ヘッダー
+    ========================== -->
+
     <header>
       <nav>
         <div class="logo">
           <p>第71回</p>
           <h1>桂川祭</h1>
         </div>
+
         <ul class="nav-bar">
           <li class="dropdown">
             <a href="#katurafes" class="gothic">桂川祭について</a>
@@ -35,46 +46,376 @@
               <li><a href="#access" class="gothic">アクセス</a></li>
             </ul>
           </li>
+
           <li class="dropdown">
             <a href="event.html" class="gothic">企画</a>
             <ul class="dropdown-menu">
-              <li><a href="#recomend-event" class="gothic">おすすめ企画</a></li>
-              <li><a href="#search-event" class="gothic">企画検索</a></li>
+              <li>
+                <a href="#recomend-event" class="gothic">おすすめ企画</a>
+              </li>
+              <li>
+                <a href="#search-event" class="gothic">企画検索</a>
+              </li>
             </ul>
           </li>
+
           <li class="dropdown">
             <a href="timetable.html" class="gothic">タイムテーブル</a>
             <ul class="dropdown-menu">
-              <li><a href="#school-map" class="gothic">校内マップ</a></li>
+              <li>
+                <a href="#school-map" class="gothic">校内マップ</a>
+              </li>
               <li>
                 <a href="#request" class="gothic">来場者の方へのお願い</a>
               </li>
             </ul>
           </li>
+
           <li class="dropdown">
             <a href="firsttime-visitor.html" class="gothic">初めての方へ</a>
             <ul class="dropdown-menu">
-              <li><a href="#katurafes-hitory" class="gothic">桂川祭とは</a></li>
+              <li>
+                <a href="#katurafes-hitory" class="gothic">桂川祭とは</a>
+              </li>
               <li>
                 <a href="#katurahes-state" class="gothic">近年の桂川祭</a>
               </li>
               <li>
                 <a href="#katurafes71-state" class="gothic">今年の桂川祭</a>
               </li>
-              <li><a href="#beloging" class="gothic">持ち物</a></li>
+              <li>
+                <a href="#beloging" class="gothic">持ち物</a>
+              </li>
             </ul>
           </li>
+
           <li class="dropdown">
             <a href="QandA.html" class="gothic">Q&A</a>
             <ul class="dropdown-menu"></ul>
           </li>
+
           <li class="dropdown">
-            <a href="pamphlet.html"><p class="gothic">パンフレット</p></a>
+            <a href="pamphlet.html">
+              <p class="gothic">パンフレット</p>
+            </a>
             <ul class="dropdown-menu"></ul>
           </li>
         </ul>
       </nav>
     </header>
-    <main></main>
+
+    <!-- =========================
+         Q&A
+    ========================== -->
+
+    <main class="qa-page">
+      <!-- 青空背景 -->
+      <div class="qa-sky"></div>
+
+      <!-- タイトル -->
+
+      <section class="qa-header">
+        <p class="qa-header-en">QUESTIONS & ANSWERS</p>
+
+        <h1>Q&A</h1>
+
+        <p class="qa-header-text">
+          桂川祭についての<br />
+          よくある質問
+        </p>
+      </section>
+
+      <!-- =========================
+           Q&A一覧
+      ========================== -->
+
+      <section class="qa-list">
+        <!-- 質問01 -->
+
+        <details class="accordion">
+          <summary class="accordion-title">
+            <span class="question-number"> 01 </span>
+
+            <span class="question-text">
+              開催期間はどのようになっていますか？
+            </span>
+
+            <span class="accordion-icon"></span>
+          </summary>
+
+          <div class="accordion-content">
+            <div class="accordion-answer">
+              <p>
+                第71回桂川祭は、2026年10月29日（木）から
+                10月31日（土）まで開催されます。<br />
+                9時45分から21時まで開場しています。<br />
+                各企画の実施時間についてはタイムテーブルをご覧ください。
+              </p>
+
+              <a href="timetable.html" class="qa-related-link">
+                <span>タイムテーブルを見る</span>
+                <span class="qa-related-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </details>
+
+        <!-- 質問02 -->
+
+        <details class="accordion">
+          <summary class="accordion-title">
+            <span class="question-number"> 02 </span>
+
+            <span class="question-text">
+              桂川祭には誰でも参加できますか？
+            </span>
+
+            <span class="accordion-icon"></span>
+          </summary>
+
+          <div class="accordion-content">
+            <div class="accordion-answer">
+              <p>
+                誰でも参加できます。
+                <br />毎年、都留文科大学の学生や地域住民の皆様はもちろん、山梨県内外からお客様がいらっしゃいます。
+                <br />出店でのお買い物やステージの観覧はもちろん、誰でも参加できる企画を多数ご用意しております。ぜひ、楽しんでいってください！
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- 質問03 -->
+
+        <details class="accordion">
+          <summary class="accordion-title">
+            <span class="question-number"> 03 </span>
+
+            <span class="question-text"> どこで開催されますか？ </span>
+
+            <span class="accordion-icon"></span>
+          </summary>
+
+          <div class="accordion-content">
+            <div class="accordion-answer">
+              <p>
+                都留文科大学のキャンパス内で行われます。アクセスにつきましては以下のページをご覧ください。
+              </p>
+
+              <a href="index.html#access" class="qa-related-link">
+                <span>アクセスについて</span>
+                <span class="qa-related-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </details>
+
+        <!-- 質問04 -->
+
+        <details class="accordion">
+          <summary class="accordion-title">
+            <span class="question-number"> 04 </span>
+
+            <span class="question-text"> 駐車場はありますか？</span>
+
+            <span class="accordion-icon"></span>
+          </summary>
+
+          <div class="accordion-content">
+            <div class="accordion-answer">
+              <p>
+                第一駐車場：学内6号館駐車場　他
+                <br />第二駐車場：つるフィールド・ミュージアム奥の空地
+                <br />となっております。ジャンパーを着た実行委員長がご案内いたします。
+                <br />なお、駐車可能台数には限りがございますため、できる限り、公共交通機関や徒歩でのご来場をお願いいたしま
+                す。
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- 質問05 -->
+
+        <details class="accordion">
+          <summary class="accordion-title">
+            <span class="question-number"> 05 </span>
+
+            <span class="question-text">
+              自転車・バイクを止める場所はありますか？
+            </span>
+
+            <span class="accordion-icon"></span>
+          </summary>
+
+          <div class="accordion-content">
+            <div class="accordion-answer">
+              <p>
+                学内6号館駐車場に、駐輪場がございます。6号館駐車場にて、ジャンパーを着た実行
+                委員がご案内いたします。
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- 質問06 -->
+
+        <details class="accordion">
+          <summary class="accordion-title">
+            <span class="question-number"> 06 </span>
+
+            <span class="question-text"> 食べ物の屋台はありますか？ </span>
+
+            <span class="accordion-icon"></span>
+          </summary>
+
+          <div class="accordion-content">
+            <div class="accordion-answer">
+              <p>
+                たくさんの食べ物の出店がございます。
+                <br />学生団体による屋台・教室出店は、昼の部（10時から15時）と夜の部（16時から20時）に分かれております。
+                <br />また、実行委員による出店もございます。
+                <br />詳しくは、学生団体の出店情報と、タイムスケジュールをご覧ください。
+              </p>
+
+              <a href="timetable.html" class="qa-related-link">
+                <span>タイムテーブルを見る</span>
+                <span class="qa-related-arrow">→</span>
+              </a>
+              <a href="event.html" class="qa-related-link">
+                <span>企画・出店をさがす</span>
+                <span class="qa-related-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </details>
+
+        <!-- 質問07 -->
+
+        <details class="accordion">
+          <summary class="accordion-title">
+            <span class="question-number"> 07 </span>
+
+            <span class="question-text">
+              雨が降った場合、桂川祭は開催されますか？
+            </span>
+
+            <span class="accordion-icon"></span>
+          </summary>
+
+          <div class="accordion-content">
+            <div class="accordion-answer">
+              <p>
+                雨天決行の予定です。ただし、屋外で行われる一部の企画につきましては、実施場所や
+                日時が変更となる場合がございます。
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- 質問08 -->
+
+        <details class="accordion">
+          <summary class="accordion-title">
+            <span class="question-number"> 08 </span>
+
+            <span class="question-text"> 子ども連れでも楽しめますか？ </span>
+
+            <span class="accordion-icon"></span>
+          </summary>
+
+          <div class="accordion-content">
+            <div class="accordion-answer">
+              <p>
+                もちろんです！お子様が楽しめるような、ものづくりや体験型の企画もご用意しております。ぜひ、お子様と一緒に桂川祭をお楽しみください。
+              </p>
+              <a href="index.html#pickupevents" class="qa-related-link">
+                <span>企画紹介</span>
+                <span class="qa-related-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </details>
+
+        <!-- 質問09 -->
+
+        <details class="accordion">
+          <summary class="accordion-title">
+            <span class="question-number"> 09 </span>
+
+            <span class="question-text">
+              会場で困ったときはどこに行けばいいですか？
+            </span>
+
+            <span class="accordion-icon"></span>
+          </summary>
+
+          <div class="accordion-content">
+            <div class="accordion-answer">
+              <p>
+                お困りのことがございましたら、お気軽にお近くの実行委員にお声がけください。実行
+                委員は、水色・ピンク・オレンジのジャンパーを着用しています。また、学生ホールの本
+                部においても、ご対応いたします。
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- 質問10 -->
+
+        <details class="accordion">
+          <summary class="accordion-title">
+            <span class="question-number"> 10 </span>
+
+            <span class="question-text">
+              ゴミはどこに捨てればいいですか？
+            </span>
+
+            <span class="accordion-icon"></span>
+          </summary>
+
+          <div class="accordion-content">
+            <div class="accordion-answer">
+              <p>
+                会場内に複数ゴミ箱を設置しておりますのでご利用ください。ゴミの分別へのご協力を
+                お願いいたします。
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- 質問11 -->
+
+        <details class="accordion">
+          <summary class="accordion-title">
+            <span class="question-number"> 11 </span>
+
+            <span class="question-text">
+              最新情報はどこで確認できますか？
+            </span>
+
+            <span class="accordion-icon"></span>
+          </summary>
+
+          <div class="accordion-content">
+            <div class="accordion-answer">
+              <p>公式Webサイトおよび公式Instagramを随時更新しております。</p>
+              <a href="index.html" class="qa-related-link">
+                <span>webサイト</span>
+                <span class="qa-related-arrow">→</span>
+              </a>
+              <a
+                href="https://www.instagram.com/katsuragawa_fes71/"
+                class="qa-related-link"
+              >
+                <span>Instagram</span>
+                <span class="qa-related-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <!-- Q&A JavaScript -->
+    <script src="qa.js"></script>
   </body>
 </html>
