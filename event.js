@@ -3,40 +3,6 @@
 ================================================== */
 
 /* ==================================================
-   企画データ
-================================================== */
-
-const projects = [
-  {
-    title: "出店・企画名①",
-    organizer: "大型企画",
-    description: "企画内容の説明がここに入ります。",
-    tags: ["10/29", "大型企画", "食品", "テント", "子どもにおすすめ"],
-  },
-
-  {
-    title: "出店・企画名②",
-    organizer: "体験型企画",
-    description: "楽しく体験できる企画です。",
-    tags: ["10/30", "体験型企画", "遊び", "3号館", "子どもにおすすめ"],
-  },
-
-  {
-    title: "ステージパフォーマンス",
-    organizer: "ステージ企画",
-    description: "ステージ上でパフォーマンスを行います。",
-    tags: ["10/31", "ステージ企画", "パフォーマンス", "ステージ"],
-  },
-
-  {
-    title: "作品展示",
-    organizer: "団体",
-    description: "学生による作品を展示します。",
-    tags: ["10/29", "団体", "展示", "5号館"],
-  },
-];
-
-/* ==================================================
    HTML要素
 ================================================== */
 
@@ -58,34 +24,42 @@ if (searchInput && projectList) {
   ================================================== */
 
   function createProjectCard(project) {
-    const card = document.createElement("article");
+    const card = document.createElement("a");
 
     card.classList.add("project-card");
+    card.href = `event-detail.html?id=${project.id}`;
 
     card.innerHTML = `
-      <div class="project-image no-image">
-        <span>アイコン画像</span>
+    <div class="project-image">
+      ${
+        project.image
+          ? `<img src="${project.image}" alt="${project.title}">`
+          : `<span>画像準備中</span>`
+      }
+    </div>
+
+    <div class="project-info">
+
+      <h2>${project.title}</h2>
+
+      <p class="project-organizer">
+        ${project.organizer}
+      </p>
+
+      <p class="project-description">
+        ${project.description}
+      </p>
+
+      <div class="project-tags">
+        ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
       </div>
 
-      <div class="project-info">
-
-        <h2>${project.title}</h2>
-
-        <p>
-          主催者：
-          ${project.organizer}
-        </p>
-
-        <p>
-          ${project.description}
-        </p>
-
-        <div class="project-tags">
-          ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
-        </div>
-
+      <div class="project-card-arrow">
+        詳細を見る →
       </div>
-    `;
+
+    </div>
+  `;
 
     return card;
   }
