@@ -401,3 +401,40 @@ qaQuestions.forEach((question) => {
     }
   });
 });
+function createProjectCard(project) {
+  const card = document.createElement("a");
+
+  card.classList.add("project-card");
+  card.href = `event-detail.html?id=${project.id}`;
+
+  card.innerHTML = `
+    <div class="project-image no-image">
+      <span>アイコン画像</span>
+    </div>
+
+    <div class="project-info">
+
+      <h2>${project.title}</h2>
+
+      <p>
+        主催者：
+        ${project.organizer}
+      </p>
+
+      <p>
+        ${project.description}
+      </p>
+
+      <div class="project-tags">
+        ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
+      </div>
+
+      <div class="project-card-arrow">
+        詳細を見る →
+      </div>
+
+    </div>
+  `;
+
+  return card;
+}
