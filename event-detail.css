@@ -1,0 +1,374 @@
+/* ========================================
+   桂川祭｜企画詳細ページ
+======================================== */
+
+/* ========================================
+   ページ全体
+======================================== */
+
+.event-detail-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.88)),
+    url("./img/sky.webp") center / cover fixed;
+  color: #333;
+  font-family: "M PLUS 1p", sans-serif;
+}
+
+/* ========================================
+   メイン
+======================================== */
+
+.event-detail-main {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 150px 0 100px;
+}
+
+/* ========================================
+   ページ上部
+======================================== */
+
+.event-detail-hero {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.event-detail-label {
+  margin-bottom: 14px;
+  color: #00a9ad;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+}
+
+.event-detail-hero h1 {
+  margin: 0;
+  color: #333;
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.event-detail-organizer {
+  margin-top: 18px;
+  color: #666;
+  font-size: 15px;
+}
+
+/* ========================================
+   詳細コンテンツ
+======================================== */
+
+.event-detail-content {
+  width: min(850px, 100%);
+  margin: 0 auto;
+}
+
+/* ========================================
+   企画画像
+======================================== */
+
+.event-detail-image {
+  width: 100%;
+  min-height: 360px;
+  margin-bottom: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 15px 45px rgba(0, 100, 120, 0.12);
+}
+
+.event-detail-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+}
+
+.event-detail-image span {
+  color: #999;
+  font-size: 14px;
+}
+
+/* ========================================
+   各情報セクション
+======================================== */
+
+.event-detail-section {
+  margin-bottom: 55px;
+  padding: 42px 48px;
+
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 182, 182, 0.12);
+  border-radius: 22px;
+
+  box-shadow: 0 12px 35px rgba(0, 100, 120, 0.08);
+}
+
+.event-detail-section h2 {
+  position: relative;
+
+  margin: 0 0 28px;
+  padding-left: 18px;
+
+  color: #00a9ad;
+  font-family: "Shippori Mincho", serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.event-detail-section h2::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  width: 4px;
+  height: 24px;
+
+  border-radius: 999px;
+  background: #00b6b6;
+
+  transform: translateY(-50%);
+}
+
+/* ========================================
+   企画説明
+======================================== */
+
+#event-detail {
+  color: #444;
+  font-size: 15px;
+  line-height: 2.2;
+}
+
+/* ========================================
+   基本情報
+======================================== */
+
+.event-info-list {
+  margin: 0;
+}
+
+.event-info-list > div {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px;
+
+  padding: 17px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.event-info-list > div:first-child {
+  padding-top: 0;
+}
+
+.event-info-list > div:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.event-info-list dt {
+  color: #777;
+  font-size: 14px;
+}
+
+.event-info-list dd {
+  margin: 0;
+  color: #333;
+  font-size: 15px;
+}
+
+/* ========================================
+   タグ
+======================================== */
+
+.event-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.event-detail-tags span {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 15px;
+
+  border: 1px solid rgba(0, 169, 173, 0.35);
+  border-radius: 999px;
+
+  background: rgba(0, 182, 182, 0.07);
+  color: #008f94;
+
+  font-size: 13px;
+}
+
+/* ========================================
+   開催日時・場所
+======================================== */
+
+.event-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.schedule-item {
+  display: grid;
+  grid-template-columns: 110px 180px 1fr;
+  align-items: center;
+  gap: 20px;
+
+  padding: 20px 22px;
+
+  border-radius: 14px;
+  background: rgba(0, 182, 182, 0.06);
+}
+
+.schedule-date {
+  color: #00a9ad;
+  font-family: "Shippori Mincho", serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.schedule-time {
+  color: #444;
+  font-size: 15px;
+}
+
+.schedule-location {
+  color: #666;
+  font-size: 14px;
+}
+
+/* ========================================
+   注意事項
+======================================== */
+
+.event-notes-section p {
+  margin: 0;
+
+  color: #555;
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* ========================================
+   企画一覧へ戻る
+======================================== */
+
+.event-detail-back {
+  text-align: center;
+  margin-top: 65px;
+}
+
+.event-detail-back a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 13px 25px;
+
+  border: 1px solid #00b6b6;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.9);
+  color: #008f94;
+
+  text-decoration: none;
+  font-size: 14px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.event-detail-back a:hover {
+  background: #00b6b6;
+  color: #fff;
+  transform: translateX(-4px);
+}
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media (max-width: 700px) {
+  .event-detail-main {
+    width: min(100% - 24px, 600px);
+    padding: 120px 0 70px;
+  }
+
+  .event-detail-hero {
+    margin-bottom: 45px;
+  }
+
+  .event-detail-hero h1 {
+    font-size: 32px;
+  }
+
+  .event-detail-organizer {
+    font-size: 14px;
+  }
+
+  .event-detail-image {
+    min-height: 230px;
+    margin-bottom: 40px;
+    border-radius: 18px;
+  }
+
+  .event-detail-section {
+    margin-bottom: 28px;
+    padding: 30px 22px;
+    border-radius: 18px;
+  }
+
+  .event-detail-section h2 {
+    font-size: 21px;
+  }
+
+  #event-detail {
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  .event-info-list > div {
+    grid-template-columns: 90px 1fr;
+    gap: 12px;
+  }
+
+  .event-info-list dt,
+  .event-info-list dd {
+    font-size: 13px;
+  }
+
+  .schedule-item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 17px;
+  }
+
+  .schedule-date {
+    font-size: 17px;
+  }
+
+  .schedule-time,
+  .schedule-location {
+    font-size: 13px;
+  }
+
+  .event-detail-back {
+    margin-top: 45px;
+  }
+}
