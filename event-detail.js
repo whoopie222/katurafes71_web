@@ -37,8 +37,7 @@ if (!project) {
 
   eventOrganizer.textContent = "";
 
-  eventImage.innerHTML =
-  "<span>該当する企画はありません。</span>";
+  eventImage.innerHTML = "<span>該当する企画はありません。</span>";
 
   eventDetail.textContent =
     "指定された企画は存在しないか、URLが正しくありません。";
@@ -74,15 +73,11 @@ if (!project) {
   ======================================== */
 
   if (project.image) {
-  eventImage.innerHTML =
-    '<img src="' +
-    project.image +
-    '" alt="' +
-    project.title +
-    '">';
-} else {
-  eventImage.innerHTML = "<span>画像準備中</span>";
-}
+    eventImage.innerHTML =
+      '<img src="' + project.image + '" alt="' + project.title + '">';
+  } else {
+    eventImage.innerHTML = "<span>画像準備中</span>";
+  }
 
   /* ========================================
      タグ
@@ -108,19 +103,19 @@ if (!project) {
     const scheduleItem = document.createElement("div");
 
     scheduleItem.classList.add("schedule-item");
-
-    scheduleItem.innerHTML =
-  '<div class="schedule-date">' +
-  schedule.date +
-  "</div>" +
-  '<div class="schedule-time">' +
-  schedule.start +
-  "〜" +
-  schedule.end +
-  "</div>" +
-  '<div class="schedule-location">' +
-  schedule.location +
-  "</div>";
+  });
+  scheduleItem.innerHTML =
+    '<div class="schedule-date">' +
+    schedule.date +
+    "</div>" +
+    '<div class="schedule-time">' +
+    schedule.start +
+    "〜" +
+    schedule.end +
+    "</div>" +
+    '<div class="schedule-location">' +
+    schedule.location +
+    "</div>";
 
   /* ========================================
      注意事項
