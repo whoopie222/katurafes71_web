@@ -22,7 +22,7 @@
 .event-detail-main {
   width: min(1100px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 150px 0 100px;
+  padding: 105px 0 80px;
 }
 
 /* ========================================
@@ -30,8 +30,10 @@
 ======================================== */
 
 .event-detail-hero {
+  min-height: auto;
+  padding: 0;
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 }
 
 .event-detail-label {
@@ -40,14 +42,13 @@
   font-size: 13px;
   letter-spacing: 0.18em;
 }
-
 .event-detail-hero h1 {
   margin: 0;
   color: #333;
   font-family: "Shippori Mincho", serif;
-  font-size: clamp(32px, 5vw, 58px);
+  font-size: clamp(30px, 4vw, 52px);
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.25;
 }
 
 .event-detail-organizer {
@@ -63,8 +64,12 @@
 .event-detail-content {
   width: min(850px, 100%);
   margin: 0 auto;
-}
 
+  min-height: auto;
+  height: auto;
+  padding: 0;
+  display: block;
+}
 /* ========================================
    企画画像
 ======================================== */
@@ -371,4 +376,12 @@
   .event-detail-back {
     margin-top: 45px;
   }
+}
+/* ==================================================
+   企画詳細ページ：ヘッダー表示
+================================================== */
+
+.event-detail-page header {
+  opacity: 1;
+  transform: translateY(0);
 }

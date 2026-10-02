@@ -1,4 +1,3 @@
-```html
 <!doctype html>
 <html lang="ja">
   <head>
@@ -27,24 +26,39 @@
          ヘッダー・ナビゲーション
     ======================================== -->
 
-    <header>
-      <div class="header-inner">
-        <a href="index.html" class="logo"> 第71回 桂川祭 </a>
+    <header class="events-header">
+      <nav>
+        <div class="logo">
+          <p>第71回</p>
+          <h1>桂川祭</h1>
+        </div>
 
-        <nav class="global-nav">
-          <a href="index.html">ホーム</a>
-          <a href="event.html">企画</a>
-          <a href="timetable.html">タイムテーブル</a>
-          <a href="firsttime-visitor.html">初めての方へ</a>
-          <a href="qa.html">Q&A</a>
-        </nav>
+        <ul class="nav-bar">
+          <li class="dropdown">
+            <a href="index.html" class="gothic">桂川祭について</a>
+          </li>
 
-        <button class="hamburger" id="hamburger" aria-label="メニューを開く">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+          <li class="dropdown">
+            <a href="event.html" class="gothic">企画</a>
+          </li>
+
+          <li class="dropdown">
+            <a href="timetable.html" class="gothic">タイムテーブル</a>
+          </li>
+
+          <li class="dropdown">
+            <a href="firsttime-visitor.html" class="gothic">初めての方へ</a>
+          </li>
+
+          <li class="dropdown">
+            <a href="qa.html" class="gothic">Q&A</a>
+          </li>
+
+          <li class="dropdown">
+            <a href="pamphlet.html" class="gothic">パンフレット</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <!-- ========================================
@@ -174,16 +188,59 @@
          フッター
     ======================================== -->
 
-    <footer>
-      <p>第71回 桂川祭</p>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-column">
+          <a href="#katurafes"><h3>桂川祭について</h3></a>
+          <a href="#top">トップ</a>
+          <a href="#theme">テーマ</a>
+          <a href="#pickupevents">見どころ</a>
+          <a href="#chairperson-message">委員長より</a>
+          <a href="#access">アクセス</a>
+        </div>
 
-      <p>都留文科大学</p>
+        <div class="footer-column">
+          <a href="event.html"><h3>企画</h3></a>
+          <a href="#recomend-event">おすすめ企画</a>
+          <a href="#search-event">企画検索</a>
+          <a href="#timetable"><h3>タイムテーブル</h3></a>
+          <a href="#school-map">校内マップ</a>
+          <a href="#request">来場者の方へのお願い</a>
+        </div>
 
-      <div class="footer-sns">
-        <a href="#" aria-label="Instagram"> Instagram </a>
+        <div class="footer-column">
+          <a href="firsttime-visitor.html"><h3>初めての方へ</h3></a>
+          <a href="#katurafes-history">桂川祭とは</a>
+          <a href="#katurafes-state">例年の様子</a>
+          <a href="#katurafes71-satate">今年の桂川祭</a>
+          <a href="#belonging">持ち物</a>
+        </div>
 
-        <a href="#" aria-label="X"> X </a>
+        <div class="footer-column">
+          <a href="QandA.html"><h3>Q&A</h3></a>
+          <a href="#pamphlet"><h3>パンフレット</h3></a>
+          <a href="application"><h3>委員会企画参加者募集</h3></a>
+        </div>
+
+        <div class="footer-column">
+          <h3>お問い合わせ</h3>
+
+          <p class="mail">katuragawafes.71@gmail.com</p>
+
+          <div class="sns">
+            <a href="https://www.instagram.com/katsuragawa_fes71/"
+              ><img src="./img/instagram_white.webp"
+            /></a>
+            <a href="https://x.com/Katsuragawa_Fes"
+              ><img src="./img/Xicon_white.webp"
+            /></a>
+          </div>
+        </div>
       </div>
+
+      <p class="copyright">
+        © 2026 Katuragawasai Executive Committee, All rights reserved.
+      </p>
     </footer>
 
     <!-- ========================================
@@ -199,4 +256,3 @@
     <script src="event-detail.js"></script>
   </body>
 </html>
-```
