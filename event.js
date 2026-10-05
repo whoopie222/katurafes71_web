@@ -27,35 +27,48 @@ if (searchInput && projectList) {
     const card = document.createElement("a");
 
     card.classList.add("project-card");
+
     card.href = `event-detail.html?id=${project.id}`;
 
+    const category = project.category || project.organizer || "";
+
+    const imageHTML = project.image
+      ? `<img src="${project.image}" alt="${project.title}">`
+      : `<span>画像準備中</span>`;
+
     card.innerHTML = `
-    <div class="project-image">
-      ${
-        project.image
-          ? `<img src="${project.image}" alt="${project.title}">`
-          : `<span>画像準備中</span>`
-      }
+    <!-- 上段 -->
+    <div class="project-main">
+
+      <!-- 左：カテゴリー・企画名 -->
+      <div class="project-info">
+        <p class="project-category">
+          ${category}
+        </p>
+
+        <h2>
+          ${project.title}
+        </h2>
+      </div>
+
+      <!-- 右：画像 -->
+      <div class="project-image">
+        ${imageHTML}
+      </div>
+
     </div>
 
-    <div class="project-info">
+    <!-- 下段 -->
+    <div class="project-extra">
 
-      <h2>${project.title}</h2>
-
-      <p class="project-organizer">
-        ${project.organizer}
-      </p>
-
+      <!-- 企画紹介 -->
       <p class="project-description">
         ${project.description}
       </p>
 
+      <!-- タグ -->
       <div class="project-tags">
         ${project.tags.map((tag) => `<span>${tag}</span>`).join("")}
-      </div>
-
-      <div class="project-card-arrow">
-        詳細を見る →
       </div>
 
     </div>
@@ -63,7 +76,6 @@ if (searchInput && projectList) {
 
     return card;
   }
-
   /* ==================================================
      企画を表示
   ================================================== */

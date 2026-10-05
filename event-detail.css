@@ -10,7 +10,7 @@
   min-height: 100vh;
   background:
     linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.88)),
-    url("./img/sky.webp") center / cover fixed;
+    url("./img/bluesky.webp") center / cover fixed;
   color: #333;
   font-family: "M PLUS 1p", sans-serif;
 }

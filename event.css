@@ -110,8 +110,6 @@ nav {
   background-position: center top;
   background-size: cover;
   background-attachment: fixed;
-
-  overflow: hidden;
 }
 
 /* ==================================================
@@ -122,17 +120,12 @@ nav {
 
 .events-page .search-page {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 70px;
 
   display: grid;
   grid-template-columns: minmax(270px, 30%) minmax(0, 1fr);
-
-  margin-left: 0;
-
-  overflow: hidden;
 }
-
 /* ==================================================
    左：検索サイドバー
 
@@ -142,7 +135,7 @@ nav {
 
 .events-page .search-sidebar {
   min-width: 0;
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
 
   padding: 28px 26px 24px;
 
@@ -151,8 +144,6 @@ nav {
 
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-
-  overflow: hidden;
 }
 
 .search-sidebar-inner {
@@ -161,7 +152,6 @@ nav {
   display: flex;
   flex-direction: column;
 }
-
 /* ---------- 左見出し ---------- */
 
 .search-heading {
@@ -432,24 +422,25 @@ nav {
 ================================================== */
 
 .events-page .project-card {
+  width: 100%;
   min-width: 0;
 
   display: grid;
-  grid-template-columns: 42% 58%;
-
-  min-height: 210px;
+  grid-template-rows: auto auto;
 
   overflow: hidden;
 
-  border: 1px solid rgba(44, 62, 80, 0.15);
-  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 28px;
 
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.88);
 
-  box-shadow: 0 8px 24px rgba(44, 62, 80, 0.08);
+  box-shadow: 0 8px 24px rgba(44, 62, 80, 0.1);
 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+
+  text-decoration: none;
 
   transition:
     transform 0.25s ease,
@@ -458,124 +449,248 @@ nav {
 
 .events-page .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(44, 62, 80, 0.14);
-}
 
-/* ---------- 企画画像 ---------- */
-
-.events-page .project-image {
-  min-width: 0;
-  min-height: 210px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.72),
-    rgba(196, 226, 236, 0.55)
-  );
-
-  color: rgba(44, 62, 80, 0.45);
-
-  font-family: "M PLUS 1p", sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-}
-
-.events-page .project-image.no-image span {
-  padding: 8px 12px;
-  border: 1px solid rgba(44, 62, 80, 0.15);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.45);
-}
-
-/* ---------- 企画情報 ---------- */
-
-.events-page .project-info {
-  min-width: 0;
-  padding: 18px 18px 16px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.project-organizer {
-  margin-bottom: 5px;
-
-  font-family: "M PLUS 1p", sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.08em;
-
-  color: #00a6a6;
-}
-
-.events-page .project-info h2 {
-  margin-bottom: 8px;
-
-  font-family: "Shippori Mincho", serif;
-  font-size: clamp(17px, 1.5vw, 22px);
-  font-weight: 400;
-  line-height: 1.4;
-
-  color: #2c3e50;
-}
-
-.events-page .project-description {
-  margin-bottom: 12px;
-
-  font-family: "M PLUS 1p", sans-serif;
-  font-size: 11px;
-  line-height: 1.7;
-
-  color: #52616b;
-}
-
-/* ---------- 企画タグ ---------- */
-
-.events-page .project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-
-  margin-top: auto;
-}
-
-.events-page .project-tags span {
-  padding: 4px 7px;
-
-  border: 1px solid rgba(44, 62, 80, 0.1);
-  border-radius: 999px;
-
-  background: rgba(255, 255, 255, 0.75);
-
-  font-family: "M PLUS 1p", sans-serif;
-  font-size: 8px;
-
-  color: #66737b;
+  box-shadow: 0 14px 32px rgba(44, 62, 80, 0.16);
 }
 
 /* ==================================================
-   該当なし
+   カード上段
+   左：文字
+   右：画像
 ================================================== */
 
-.events-page .no-result {
-  grid-column: 1 / -1;
+.events-page .project-main {
+  width: 100%;
+  min-width: 0;
 
-  min-height: 240px;
+  display: grid;
+
+  /*
+    左：文字
+    右：画像
+
+    文字 45%
+    画像 55%
+  */
+  grid-template-columns: 45% 55%;
+
+  align-items: stretch;
+}
+
+/* ==================================================
+   左：文字ゾーン
+================================================== */
+
+.events-page .project-info {
+  width: 100%;
+  min-width: 0;
+
+  padding: 32px 34px;
 
   display: flex;
   flex-direction: column;
+
+  justify-content: center;
+  align-items: flex-start;
+
+  box-sizing: border-box;
+
+  /*
+    文字が縦書きになったり、
+    1文字ずつ極端に折り返されたりするのを防ぐ
+  */
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+
+  overflow: hidden;
+}
+
+/* ==================================================
+   カテゴリー
+================================================== */
+
+.events-page .project-category {
+  display: block;
+
+  width: 100%;
+
+  margin: 0 0 16px;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.08em;
+
+  color: #00a6a6;
+
+  text-align: left;
+
+  writing-mode: horizontal-tb;
+}
+
+/* ==================================================
+   企画名
+================================================== */
+
+.events-page .project-info h2 {
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+
+  font-family: "M+Plus+1p", serif;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  color: #2c3e50;
+
+  text-align: left;
+
+  writing-mode: horizontal-tb;
+
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* ==================================================
+   右：画像ゾーン
+================================================== */
+
+.events-page .project-image {
+  width: 100%;
+  min-width: 0;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
 
-  border: 1px dashed rgba(44, 62, 80, 0.2);
-  background: rgba(255, 255, 255, 0.45);
+  background: #e8f4f7;
 
-  color: #68757e;
-  text-align: center;
+  box-sizing: border-box;
+}
+
+.events-page .project-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+/* ==================================================
+   カード下段
+================================================== */
+
+.events-page .project-extra {
+  width: 100%;
+  min-width: 0;
+
+  padding: 24px 30px 26px;
+
+  border-top: 1px solid rgba(44, 62, 80, 0.08);
+
+  display: grid;
+
+  grid-template-columns: 1fr auto;
+
+  grid-template-areas:
+    "description description"
+    "tags detail";
+
+  gap: 16px 20px;
+
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   企画紹介
+================================================== */
+
+.events-page .project-description {
+  grid-area: description;
+
+  width: 100%;
+
+  margin: 0;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  color: #52616b;
+
+  text-align: left;
+
+  writing-mode: horizontal-tb;
+}
+
+/* ==================================================
+   タグ
+================================================== */
+
+.events-page .project-tags {
+  grid-area: tags;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.events-page .project-tags span {
+  padding: 5px 11px;
+
+  border: 1px solid rgba(0, 166, 166, 0.22);
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 9px;
+
+  line-height: 1.4;
+
+  color: #008f8f;
+
+  white-space: nowrap;
+}
+
+/* ==================================================
+   リンクの標準デザインを無効化
+================================================== */
+
+.events-page .project-card,
+.events-page .project-card:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.events-page .project-card h2 {
+  color: #2c3e50;
+  text-decoration: none;
 }
 
 .events-page .no-result p {
@@ -684,27 +799,5 @@ nav {
 
   .events-page .project-grid {
     grid-template-columns: 1fr;
-  }
-
-  .events-page .project-card {
-    grid-template-columns: 40% 60%;
-  }
-}
-
-@media (max-width: 520px) {
-  .nav-bar li:nth-child(3) {
-    display: none;
-  }
-
-  .events-page .project-card {
-    grid-template-columns: 1fr;
-  }
-
-  .events-page .project-image {
-    min-height: 150px;
-  }
-
-  .events-page .project-info {
-    min-height: 180px;
   }
 }

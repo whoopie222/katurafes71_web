@@ -94,8 +94,8 @@ if (!project) {
   });
 
   /* ========================================
-     開催日時・場所
-  ======================================== */
+   開催日時・場所
+======================================== */
 
   eventSchedule.innerHTML = "";
 
@@ -103,19 +103,28 @@ if (!project) {
     const scheduleItem = document.createElement("div");
 
     scheduleItem.classList.add("schedule-item");
+
+    /* 場所が複数ある場合にも対応 */
+    const location = Array.isArray(schedule.location)
+      ? schedule.location.join("・")
+      : schedule.location;
+
+    scheduleItem.innerHTML =
+      '<div class="schedule-date">' +
+      schedule.date +
+      "</div>" +
+      '<div class="schedule-time">' +
+      schedule.start +
+      "〜" +
+      schedule.end +
+      "</div>" +
+      '<div class="schedule-location">' +
+      location +
+      "</div>";
+
+    /* 作成した開催情報を画面に追加 */
+    eventSchedule.appendChild(scheduleItem);
   });
-  scheduleItem.innerHTML =
-    '<div class="schedule-date">' +
-    schedule.date +
-    "</div>" +
-    '<div class="schedule-time">' +
-    schedule.start +
-    "〜" +
-    schedule.end +
-    "</div>" +
-    '<div class="schedule-location">' +
-    schedule.location +
-    "</div>";
 
   /* ========================================
      注意事項
