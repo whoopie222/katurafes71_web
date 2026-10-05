@@ -411,16 +411,15 @@ nav a {
   gap: 40px;
   align-items: start;
   padding: 100px 40px;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .events-page .search-sidebar {
   position: sticky;
   top: 80px; /* header の高さに合わせる */
   align-self: start;
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
   overflow-y: auto;
   padding-right: 8px;
 }
@@ -463,8 +462,7 @@ nav a {
 
   .events-page .search-sidebar {
     position: static;
-    height: auto;
-    overflow: visible;
+    min-height: auto;
     margin-bottom: 18px;
   }
 
@@ -1068,8 +1066,6 @@ footer a:hover {
 
   position: sticky;
   top: 70px;
-
-  overflow-y: auto;
 }
 
 /* 検索バー */

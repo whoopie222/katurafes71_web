@@ -128,6 +128,8 @@ nav {
   display: grid;
   grid-template-columns: minmax(270px, 30%) minmax(0, 1fr);
 
+  margin-left: 0;
+
   overflow: hidden;
 }
 
@@ -155,7 +157,6 @@ nav {
 
 .search-sidebar-inner {
   width: 100%;
-  height: 100%;
 
   display: flex;
   flex-direction: column;
@@ -258,10 +259,6 @@ nav {
 
 .filter-groups {
   flex: 1;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
   min-height: 0;
 }
@@ -372,15 +369,9 @@ nav {
 
 .events-page .contents-area {
   min-width: 0;
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
 
   padding: 34px clamp(24px, 4vw, 60px) 50px;
-
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 182, 182, 0.35) transparent;
 }
 
 .contents-header {
