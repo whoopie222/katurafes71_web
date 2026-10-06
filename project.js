@@ -1468,7 +1468,7 @@ const projects = [
     // ⑤ 画像
     // ========================================
 
-    image: "img-events-event021.webp",
+    image: "./img/event-img/img-events-event021.webp",
 
     // ========================================
     // ⑥ 料金・予約
@@ -1542,7 +1542,7 @@ const projects = [
     // ⑤ 画像
     // ========================================
 
-    image: "img-events-event022.webp",
+    image: "./img/event-img/img-events-event022.webp",
 
     // ========================================
     // ⑥ 料金・予約
@@ -1616,7 +1616,7 @@ const projects = [
     // ⑤ 画像
     // ========================================
 
-    image: "img-events-event023.webp",
+    image: "./img/event-img/img-events-event023.webp",
 
     // ========================================
     // ⑥ 料金・予約
@@ -1689,7 +1689,7 @@ const projects = [
     // ⑤ 画像
     // ========================================
 
-    image: "img-events-event024.webp",
+    image: "./img/event-img/img-events-event024.webp",
 
     // ========================================
     // ⑥ 料金・予約
@@ -1763,7 +1763,7 @@ const projects = [
     // ⑤ 画像
     // ========================================
 
-    image: "img-events-event025.webp",
+    image: "./img/event-img/img-events-event025.webp",
 
     // ========================================
     // ⑥ 料金・予約
@@ -1837,7 +1837,7 @@ const projects = [
     // ⑤ 画像
     // ========================================
 
-    image: "img-events-event026.webp",
+    image: "./img/event-img/img-events-event026.webp",
 
     // ========================================
     // ⑥ 料金・予約
@@ -1910,7 +1910,7 @@ const projects = [
     // ⑤ 画像
     // ========================================
 
-    image: "img-events-event027.webp",
+    image: "./img/event-img/img-events-event027.webp",
 
     // ========================================
     // ⑥ 料金・予約
@@ -1991,7 +1991,7 @@ const projects = [
     // ⑤ 画像
     // ========================================
 
-    image: "img-events-event028.webp",
+    image: "./img/event-img/img-events-event028.webp",
 
     // ========================================
     // ⑥ 料金・予約
@@ -2065,7 +2065,7 @@ const projects = [
     // ⑤ 画像
     // ========================================
 
-    image: "img-events-event029.webp",
+    image: "./img/event-img/img-events-event029.webp",
 
     // ========================================
     // ⑥ 料金・予約
@@ -2138,7 +2138,7 @@ const projects = [
     // ⑤ 画像
     // ========================================
 
-    image: "img-events-event030.webp",
+    image: "./img/event-img/img-events-event030.webp",
 
     // ========================================
     // ⑥ 料金・予約
@@ -2212,7 +2212,7 @@ const projects = [
     // ⑤ 画像
     // ========================================
 
-    image: "img-events-event031.webp",
+    image: "./img/event-img/img-events-event031.webp",
 
     // ========================================
     // ⑥ 料金・予約
@@ -2285,7 +2285,7 @@ const projects = [
     // ⑤ 画像
     // ========================================
 
-    image: "img-events-event032.webp",
+    image: "./img/event-img/img-events-event032.webp",
 
     // ========================================
     // ⑥ 料金・予約
@@ -2359,7 +2359,7 @@ const projects = [
     // ⑤ 画像
     // ========================================
 
-    image: "img-events-event033.webp",
+    image: "./img/event-img/img-events-event033.webp",
 
     // ========================================
     // ⑥ 料金・予約
