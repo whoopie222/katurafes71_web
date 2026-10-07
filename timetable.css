@@ -1,0 +1,943 @@
+/* ==================================================
+   桂川祭｜タイムテーブル
+================================================== */
+
+/* ==================================================
+   ページ全体
+================================================== */
+
+.timetable-page {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(rgba(235, 249, 255, 0.82), rgba(245, 252, 255, 0.94)),
+    url("./img/bluesky.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  color: #2c3e50;
+}
+
+/* ==================================================
+   メイン
+================================================== */
+
+.timetable-main {
+  width: min(1500px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  padding: 150px 0 100px;
+}
+
+/* ==================================================
+   ページタイトル
+================================================== */
+
+.page-heading {
+  text-align: center;
+
+  margin-bottom: 55px;
+}
+
+.page-heading-small {
+  margin-bottom: 8px;
+
+  color: #00a9ad;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+}
+
+.page-heading h1 {
+  margin: 0;
+
+  color: #2c3e50;
+
+  font-family: "Shippori Mincho", serif;
+
+  font-size: clamp(40px, 5vw, 64px);
+
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+}
+
+.page-heading > p:last-child {
+  margin-top: 20px;
+
+  color: #607789;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+/* ==================================================
+   日付タブ
+================================================== */
+
+.date-section {
+  width: 100%;
+
+  margin-bottom: 45px;
+}
+
+.date-tabs {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 14px;
+}
+
+.date-tab {
+  position: relative;
+
+  width: 180px;
+  min-height: 76px;
+
+  padding: 12px 20px;
+
+  border: 1px solid rgba(0, 182, 182, 0.3);
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  color: #547080;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 25px rgba(40, 110, 135, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.date-tab:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.95);
+
+  box-shadow: 0 12px 30px rgba(40, 110, 135, 0.13);
+}
+
+.date-tab.active {
+  background: #00b6b6;
+
+  border-color: #00b6b6;
+
+  color: white;
+
+  box-shadow: 0 12px 30px rgba(0, 166, 166, 0.25);
+}
+
+.date-number {
+  display: block;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 24px;
+
+  font-weight: 600;
+
+  line-height: 1.2;
+}
+
+.date-week {
+  display: block;
+
+  margin-top: 4px;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 0.18em;
+}
+
+/* ==================================================
+   日付コンテンツ
+================================================== */
+
+.timetable-day.hidden {
+  display: none;
+}
+
+/* ==================================================
+   B案レイアウト
+   左：ステージ1列
+   右：その他2列
+================================================== */
+
+.schedule-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 0.9fr)
+    minmax(0, 2fr);
+
+  gap: 28px;
+
+  align-items: start;
+}
+
+/* ==================================================
+   共通セクション
+================================================== */
+
+.stage-section,
+.other-section {
+  min-width: 0;
+
+  padding: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.62);
+
+  box-shadow: 0 18px 50px rgba(38, 105, 130, 0.1);
+
+  backdrop-filter: blur(12px);
+}
+
+/* ==================================================
+   セクション見出し
+================================================== */
+
+.section-heading {
+  margin-bottom: 25px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid rgba(0, 166, 166, 0.16);
+}
+
+.section-heading p {
+  margin-bottom: 5px;
+
+  color: #00a9ad;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: #2c3e50;
+
+  font-family: "Shippori Mincho", serif;
+
+  font-size: 26px;
+
+  font-weight: 500;
+}
+
+/* ==================================================
+   STAGE
+================================================== */
+
+.stage-timeline {
+  position: relative;
+
+  padding-left: 10px;
+}
+
+/*
+   ステージ全体をつなぐ縦線
+*/
+
+.stage-timeline::before {
+  content: "";
+
+  position: absolute;
+
+  top: 8px;
+  bottom: 8px;
+  left: 93px;
+
+  width: 2px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 182, 182, 0.15),
+    rgba(0, 182, 182, 0.55),
+    rgba(0, 182, 182, 0.15)
+  );
+}
+
+/* ==================================================
+   ステージカード
+================================================== */
+
+.stage-item {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    75px
+    minmax(0, 1fr);
+
+  gap: 25px;
+
+  padding: 12px 8px 18px;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  transition: transform 0.2s ease;
+}
+
+.stage-item:hover {
+  transform: translateX(4px);
+}
+
+/* 時間 */
+
+.stage-time {
+  padding-top: 2px;
+
+  color: #00a9ad;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  line-height: 1.45;
+
+  text-align: right;
+
+  white-space: nowrap;
+}
+
+/*
+   タイムラインの丸
+*/
+
+.stage-item::before {
+  content: "";
+
+  position: absolute;
+
+  top: 17px;
+  left: 78px;
+
+  width: 12px;
+  height: 12px;
+
+  border: 3px solid white;
+
+  border-radius: 50%;
+
+  background: #00b6b6;
+
+  box-shadow: 0 0 0 3px rgba(0, 182, 182, 0.18);
+
+  z-index: 2;
+}
+
+/* ステージ企画情報 */
+
+.stage-information {
+  min-width: 0;
+
+  padding: 15px 16px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  box-shadow: 0 6px 18px rgba(40, 100, 120, 0.06);
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.stage-item:hover .stage-information {
+  background: rgba(255, 255, 255, 0.95);
+
+  box-shadow: 0 9px 24px rgba(40, 100, 120, 0.11);
+}
+
+.stage-title {
+  margin: 0;
+
+  color: #2c3e50;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  line-height: 1.65;
+}
+
+.stage-location {
+  margin: 8px 0 0;
+
+  color: #718794;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 12px;
+}
+
+/* ==================================================
+   その他の企画
+================================================== */
+
+.event-list {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  align-items: stretch;
+}
+
+/* ==================================================
+   その他の企画カード
+================================================== */
+
+.event-card {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+
+  min-height: 210px;
+
+  padding: 20px;
+
+  border: 1px solid rgba(0, 182, 182, 0.13);
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  color: #2c3e50;
+
+  text-decoration: none;
+
+  box-shadow: 0 8px 24px rgba(40, 100, 120, 0.08);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.event-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: linear-gradient(90deg, #00b6b6, rgba(0, 182, 182, 0.25));
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(0, 182, 182, 0.32);
+
+  box-shadow: 0 15px 35px rgba(40, 100, 120, 0.14);
+}
+
+/* ==================================================
+   カレンダー風の時間表示
+================================================== */
+
+.event-time {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 0 0 16px;
+
+  padding-bottom: 13px;
+
+  border-bottom: 1px solid rgba(0, 166, 166, 0.12);
+
+  color: #00a9ad;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.02em;
+
+  line-height: 1.4;
+}
+
+/*
+   時間の「→」を少し強調
+*/
+
+.event-time::before {
+  content: "TIME";
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 39px;
+
+  height: 20px;
+
+  padding: 0 5px;
+
+  border-radius: 5px;
+
+  background: rgba(0, 182, 182, 0.1);
+
+  color: #00a9ad;
+
+  font-size: 8px;
+
+  letter-spacing: 0.08em;
+}
+
+/* ==================================================
+   カテゴリー
+================================================== */
+
+.event-category {
+  margin: 0 0 7px;
+
+  color: #00a9ad;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+}
+
+/* ==================================================
+   企画タイトル
+================================================== */
+
+.event-title {
+  margin: 0;
+
+  color: #2c3e50;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  line-height: 1.65;
+}
+
+/* ==================================================
+   場所
+================================================== */
+
+.event-location {
+  margin: auto 0 12px;
+
+  padding-top: 15px;
+
+  color: #718794;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+/* ==================================================
+   詳細リンク
+================================================== */
+
+.event-link {
+  align-self: flex-end;
+
+  color: #00a9ad;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  transition: transform 0.2s ease;
+}
+
+.event-card:hover .event-link {
+  transform: translateX(4px);
+}
+
+/* ==================================================
+   企画がない場合
+================================================== */
+
+.empty-message {
+  margin: 20px 0;
+
+  padding: 30px 20px;
+
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.65);
+
+  color: #718794;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 13px;
+
+  text-align: center;
+}
+
+/* ==================================================
+   校内マップ
+================================================== */
+
+.map-link-area {
+  margin-top: 45px;
+
+  padding: 35px;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  text-align: center;
+
+  box-shadow: 0 12px 35px rgba(40, 100, 120, 0.08);
+}
+
+.map-link-area p {
+  margin: 0 0 15px;
+
+  color: #718794;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 13px;
+}
+
+.map-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 12px 25px;
+
+  border: 1px solid #00b6b6;
+
+  border-radius: 50px;
+
+  background: white;
+
+  color: #00a9ad;
+
+  text-decoration: none;
+
+  font-family: "M PLUS 1p", sans-serif;
+
+  font-size: 13px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.map-link:hover {
+  background: #00b6b6;
+
+  color: white;
+
+  transform: translateX(4px);
+}
+
+/* ==================================================
+   タブレット
+================================================== */
+
+@media (max-width: 1100px) {
+  .timetable-main {
+    width: min(100% - 40px, 900px);
+  }
+
+  .schedule-layout {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  /*
+    画面が狭くなったら
+    ステージもその他も1列
+  */
+
+  .event-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ==================================================
+   スマートフォン
+================================================== */
+
+@media (max-width: 650px) {
+  .timetable-main {
+    width: calc(100% - 24px);
+
+    padding-top: 120px;
+    padding-bottom: 70px;
+  }
+
+  /* -----------------------------------------------
+     タイトル
+  ------------------------------------------------ */
+
+  .page-heading {
+    margin-bottom: 35px;
+  }
+
+  .page-heading h1 {
+    font-size: 38px;
+  }
+
+  .page-heading > p:last-child {
+    font-size: 13px;
+  }
+
+  /* -----------------------------------------------
+     日付タブ
+  ------------------------------------------------ */
+
+  .date-tabs {
+    gap: 7px;
+  }
+
+  .date-tab {
+    width: 100%;
+
+    min-height: 66px;
+
+    padding: 10px 5px;
+
+    border-radius: 14px;
+  }
+
+  .date-number {
+    font-size: 19px;
+  }
+
+  .date-week {
+    font-size: 9px;
+  }
+
+  /* -----------------------------------------------
+     セクション
+  ------------------------------------------------ */
+
+  .stage-section,
+  .other-section {
+    padding: 20px 15px;
+
+    border-radius: 22px;
+  }
+
+  .section-heading {
+    margin-bottom: 20px;
+  }
+
+  .section-heading h2 {
+    font-size: 22px;
+  }
+
+  /* -----------------------------------------------
+     ステージ
+  ------------------------------------------------ */
+
+  .stage-timeline {
+    padding-left: 0;
+  }
+
+  .stage-timeline::before {
+    left: 72px;
+  }
+
+  .stage-item {
+    grid-template-columns:
+      55px
+      minmax(0, 1fr);
+
+    gap: 20px;
+
+    padding: 10px 4px 17px;
+  }
+
+  .stage-time {
+    font-size: 11px;
+  }
+
+  .stage-item::before {
+    left: 66px;
+
+    width: 10px;
+    height: 10px;
+  }
+
+  .stage-information {
+    padding: 12px 13px;
+  }
+
+  .stage-title {
+    font-size: 13px;
+  }
+
+  .stage-location {
+    font-size: 10px;
+  }
+
+  /* -----------------------------------------------
+     その他の企画
+  ------------------------------------------------ */
+
+  .event-list {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .event-card {
+    min-height: auto;
+
+    padding: 17px 16px;
+  }
+
+  /* -----------------------------------------------
+     スマホの時間表示
+  ------------------------------------------------ */
+
+  .event-time {
+    margin-bottom: 12px;
+
+    padding-bottom: 10px;
+
+    font-size: 14px;
+  }
+
+  .event-time::before {
+    min-width: 36px;
+
+    height: 19px;
+
+    font-size: 7px;
+  }
+
+  .event-title {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+  .event-location {
+    margin-top: 18px;
+
+    padding-top: 10px;
+
+    font-size: 11px;
+  }
+
+  .event-link {
+    font-size: 10px;
+  }
+
+  /* -----------------------------------------------
+     マップ
+  ------------------------------------------------ */
+
+  .map-link-area {
+    margin-top: 25px;
+
+    padding: 25px 15px;
+  }
+}
+
+/* ==================================================
+   小さいスマートフォン
+================================================== */
+
+@media (max-width: 400px) {
+  .date-number {
+    font-size: 17px;
+  }
+
+  .date-week {
+    font-size: 8px;
+  }
+
+  .stage-item {
+    grid-template-columns:
+      50px
+      minmax(0, 1fr);
+
+    gap: 17px;
+  }
+
+  .stage-timeline::before {
+    left: 66px;
+  }
+
+  .stage-item::before {
+    left: 60px;
+  }
+}

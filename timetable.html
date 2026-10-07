@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>タイムテーブル｜第71回桂川祭</title>
+
+    <!-- 共通CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- タイムテーブル専用CSS -->
+    <link rel="stylesheet" href="timetable.css" />
+  </head>
+
+  <body class="timetable-page">
+    <!-- =========================
+       ヘッダー
+  ========================== -->
+    <header class="header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <span>第71回</span>
+          <strong>桂川祭</strong>
+        </a>
+
+        <nav class="nav">
+          <a href="about.html">桂川祭について</a>
+          <a href="event.html">企画</a>
+          <a href="timetable.html" class="current">タイムテーブル</a>
+          <a href="firsttime-visitor.html">初めての方へ</a>
+          <a href="qa.html">Q&A</a>
+        </nav>
+
+        <button class="menu-button" type="button" aria-label="メニューを開く">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- =========================
+       メイン
+  ========================== -->
+    <main class="timetable-main">
+      <!-- ページタイトル -->
+      <section class="page-heading">
+        <p class="page-heading-small">TIMETABLE</p>
+        <h1>タイムテーブル</h1>
+        <p>
+          気になる企画を見つけて、<br />
+          桂川祭の一日を計画しよう。
+        </p>
+      </section>
+
+      <!-- =========================
+         日付選択
+    ========================== -->
+      <section class="date-section">
+        <div class="date-tabs">
+          <button class="date-tab active" type="button" data-date="10/29">
+            <span class="date-number">10/29</span>
+            <span class="date-week">THU</span>
+          </button>
+
+          <button class="date-tab" type="button" data-date="10/30">
+            <span class="date-number">10/30</span>
+            <span class="date-week">FRI</span>
+          </button>
+
+          <button class="date-tab" type="button" data-date="10/31">
+            <span class="date-number">10/31</span>
+            <span class="date-week">SAT</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- =========================
+         各日のタイムテーブル
+    ========================== -->
+
+      <section class="timetable-content">
+        <!-- 10/29 -->
+        <div class="timetable-day" data-day="10/29">
+          <div class="schedule-layout">
+            <!-- ステージ -->
+            <section class="stage-section">
+              <div class="section-heading">
+                <p>STAGE</p>
+                <h2>ステージ企画</h2>
+              </div>
+
+              <div class="stage-timeline" id="stage-10-29">
+                <!-- JavaScriptで表示 -->
+              </div>
+            </section>
+
+            <!-- その他の企画 -->
+            <section class="other-section">
+              <div class="section-heading">
+                <p>PROJECTS</p>
+                <h2>その他の企画</h2>
+              </div>
+
+              <div class="event-list" id="events-10-29">
+                <!-- JavaScriptで表示 -->
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- 10/30 -->
+        <div class="timetable-day hidden" data-day="10/30">
+          <div class="schedule-layout">
+            <!-- ステージ -->
+            <section class="stage-section">
+              <div class="section-heading">
+                <p>STAGE</p>
+                <h2>ステージ企画</h2>
+              </div>
+
+              <div class="stage-timeline" id="stage-10-30">
+                <!-- JavaScriptで表示 -->
+              </div>
+            </section>
+
+            <!-- その他の企画 -->
+            <section class="other-section">
+              <div class="section-heading">
+                <p>PROJECTS</p>
+                <h2>その他の企画</h2>
+              </div>
+
+              <div class="event-list" id="events-10-30">
+                <!-- JavaScriptで表示 -->
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- 10/31 -->
+        <div class="timetable-day hidden" data-day="10/31">
+          <div class="schedule-layout">
+            <!-- ステージ -->
+            <section class="stage-section">
+              <div class="section-heading">
+                <p>STAGE</p>
+                <h2>ステージ企画</h2>
+              </div>
+
+              <div class="stage-timeline" id="stage-10-31">
+                <!-- JavaScriptで表示 -->
+              </div>
+            </section>
+
+            <!-- その他の企画 -->
+            <section class="other-section">
+              <div class="section-heading">
+                <p>PROJECTS</p>
+                <h2>その他の企画</h2>
+              </div>
+
+              <div class="event-list" id="events-10-31">
+                <!-- JavaScriptで表示 -->
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+         校内マップ
+    ========================== -->
+      <section class="map-link-area">
+        <p>企画の場所を確認したい方はこちら</p>
+
+        <a href="#" class="map-link">
+          校内マップを見る
+          <span>→</span>
+        </a>
+      </section>
+    </main>
+
+    <!-- =========================
+       JavaScript
+  ========================== -->
+
+    <!-- 企画データ -->
+    <script src="project.js"></script>
+
+    <!-- タイムテーブル専用JS -->
+    <script src="timetable.js"></script>
+  </body>
+</html>
