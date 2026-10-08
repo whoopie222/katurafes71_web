@@ -92,37 +92,183 @@ h3 {
 .gothic {
   font-family: "M PLUS 1p", sans-serif;
 }
+/* ==================================================
+   共通ナビゲーション
+================================================== */
 
-/* ナビ */
 header {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
 
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 70px;
+
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
   z-index: 1000;
 
-  opacity: 0;
-  transform: translateY(-20px);
-
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
-}
-
-header.show {
   opacity: 1;
   transform: translateY(0);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
-header {
-  position: fixed;
-  top: 0;
+
+header nav {
   width: 100%;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+}
+
+/* ---------- ロゴ ---------- */
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  line-height: 0.95;
+
+  color: #2c3e50;
+
+  flex-shrink: 0;
+}
+
+.logo p {
+  margin: 0;
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.logo h1 {
+  margin: 0;
+
+  font-family: "Shippori Mincho", serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+/* ---------- メインナビ ---------- */
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+
+  gap: 32px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.nav-bar > li {
+  position: relative;
+}
+
+.nav-bar a {
+  display: block;
+
+  text-decoration: none;
+
+  color: #2c3e50;
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.nav-bar > li > a:hover {
+  color: #00a6a6;
+}
+
+/* ---------- ドロップダウン ---------- */
+
+.dropdown-menu {
+  position: absolute;
+
+  top: calc(100% + 14px);
+  left: 50%;
+
+  transform: translateX(-50%) translateY(-5px);
+
+  min-width: 150px;
+
+  margin: 0;
+  padding: 8px 0;
+
+  list-style: none;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(44, 62, 80, 0.1);
+  border-radius: 4px;
+
+  box-shadow: 0 10px 30px rgba(44, 62, 80, 0.12);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+
+  z-index: 1100;
+}
+
+.dropdown:hover > .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu a {
+  width: 100%;
+
+  padding: 10px 18px;
+
+  font-size: 13px;
+
+  color: #2c3e50;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(0, 182, 182, 0.08);
+
+  color: #00a6a6;
 }
 
 nav {
@@ -131,27 +277,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
-}
-
-.nav-bar {
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  list-style: none;
-}
-
-nav a {
-  text-decoration: none;
-  color: #2c3e50;
-  font-weight: 300;
-}
-
-.logo {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: -10px;
-  line-height: 0.97;
 }
 
 .menu-panel {
@@ -178,52 +303,6 @@ nav a {
   display: flex;
   flex-direction: column;
   gap: 15px;
-}
-
-.dropdown {
-  position: relative;
-  list-style: none;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-
-  width: auto;
-
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-
-  list-style: none;
-  padding: 20;
-  margin: 5px;
-  border-radius: 5px;
-
-  opacity: 0;
-  visibility: hidden;
-
-  transition: 0.3s;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-}
-
-.dropdown-menu li {
-  width: 100%;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 6px 16px;
-  text-decoration: none;
-  color: #333;
-  white-space: nowrap;
 }
 
 .dropdown-menu a:hover {
@@ -973,14 +1052,7 @@ h4 {
 footer a:hover {
   opacity: 0.7;
 }
-/* =========================
-   企画ページのナビ
-========================= */
 
-.events-page header {
-  opacity: 1;
-  transform: translateY(0);
-}
 /* =========================
    企画検索ページ
 ========================= */
@@ -1179,4 +1251,264 @@ footer a:hover {
   text-align: center;
 
   color: #777;
+}
+/* ==================================================
+   スマートフォン用ナビゲーション
+================================================== */
+
+.hamburger {
+  display: none;
+}
+
+/* ---------- スマホ下部ナビ ---------- */
+
+.mobile-bottom-nav {
+  display: none;
+}
+
+/* ==================================================
+   スマートフォン
+================================================== */
+
+@media (max-width: 768px) {
+  /* ---------- ヘッダー ---------- */
+
+  header {
+    height: 64px;
+  }
+
+  header nav {
+    height: 64px;
+    padding: 0 18px;
+  }
+
+  /* ---------- ロゴ ---------- */
+
+  .logo {
+    align-items: flex-start;
+  }
+
+  .logo p {
+    font-size: 10px;
+  }
+
+  .logo h1 {
+    font-size: 19px;
+  }
+
+  /* ---------- ハンバーガー ---------- */
+
+  .hamburger {
+    display: flex;
+
+    width: 44px;
+    height: 44px;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    cursor: pointer;
+
+    z-index: 1200;
+  }
+
+  .hamburger span {
+    display: block;
+
+    width: 23px;
+    height: 1.5px;
+
+    background: #2c3e50;
+
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  /* ---------- ハンバーガーを×に ---------- */
+
+  header.menu-open .hamburger span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+
+  header.menu-open .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  header.menu-open .hamburger span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  /* ---------- PC用ナビをスマホ用パネルに ---------- */
+
+  .nav-bar {
+    position: fixed;
+
+    top: 64px;
+    right: 0;
+
+    width: min(82vw, 330px);
+    height: calc(100vh - 64px);
+
+    margin: 0;
+    padding: 25px 22px 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow: -10px 0 30px rgba(44, 62, 80, 0.12);
+
+    overflow-y: auto;
+
+    transform: translateX(100%);
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+
+    z-index: 1150;
+  }
+
+  header.menu-open .nav-bar {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ---------- メニュー項目 ---------- */
+
+  .nav-bar > li {
+    width: 100%;
+    border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+  }
+
+  .nav-bar > li > a {
+    padding: 17px 8px;
+
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  /* ---------- スマホではサブメニューも表示 ---------- */
+
+  .dropdown-menu {
+    position: static;
+
+    width: 100%;
+
+    transform: none;
+
+    margin: 0;
+    padding: 0 0 8px;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    display: flex;
+  }
+
+  .dropdown-menu a {
+    padding: 9px 18px;
+
+    font-size: 12px;
+
+    color: #65727d;
+  }
+
+  .dropdown-menu a:hover {
+    background: rgba(0, 182, 182, 0.08);
+  }
+
+  /* ---------- 下部固定ナビ ---------- */
+
+  .mobile-bottom-nav {
+    position: fixed;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 68px;
+
+    display: flex;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-top: 1px solid rgba(44, 62, 80, 0.1);
+
+    box-shadow: 0 -5px 20px rgba(44, 62, 80, 0.08);
+
+    z-index: 1000;
+
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .mobile-bottom-nav a {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 3px;
+
+    color: #2c3e50;
+
+    text-decoration: none;
+
+    font-family: "M PLUS 1p", sans-serif;
+    font-size: 10px;
+
+    transition:
+      color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .mobile-bottom-nav a:hover,
+  .mobile-bottom-nav a:active {
+    color: #00a6a6;
+    background: rgba(0, 182, 182, 0.06);
+  }
+
+  .bottom-nav-icon {
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  /* ---------- 本文が下部ナビに隠れないように ---------- */
+
+  body {
+    padding-bottom: 68px;
+  }
 }

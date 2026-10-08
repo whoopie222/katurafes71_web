@@ -83,14 +83,16 @@ function createTimetable(date) {
   const dayProjects = [];
 
   projects.forEach((project) => {
+    // 装飾企画・団体企画はタイムテーブルに表示しない
+    if (project.category === "装飾企画" || project.category === "団体") {
+      return;
+    }
+
     const schedules = getSchedules(project);
 
     schedules.forEach((schedule) => {
       if (schedule.date === date) {
-        dayProjects.push({
-          project: project,
-          schedule: schedule,
-        });
+        dayProjects.push({ project, schedule });
       }
     });
   });
@@ -111,13 +113,15 @@ function createTimetable(date) {
   ================================================== */
 
   const stageProjects = dayProjects.filter(
-    (item) => item.project.category === "ステージ企画",
+    (item) =>
+      item.project.category === "ステージ企画" ||
+      item.project.category === "ステージ出演団体",
   );
-
   const otherProjects = dayProjects.filter(
-    (item) => item.project.category !== "ステージ企画",
+    (item) =>
+      item.project.category !== "ステージ企画" &&
+      item.project.category !== "ステージ出演団体",
   );
-
   /* ==================================================
      ステージ企画
   ================================================== */
@@ -193,7 +197,7 @@ function createTimetable(date) {
 
     const card = document.createElement("a");
 
-    card.classList.add("event-card");
+    card.classList.add("timetable-card");
 
     card.href = `event-detail.html?id=${project.id}`;
 

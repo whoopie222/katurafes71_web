@@ -92,22 +92,7 @@ if (topSection) {
     topSection.style.setProperty("--hero-opacity", opacity);
   });
 }
-
-/* ---------- ハンバーガーメニュー ---------- */
-
-const hamburger = document.getElementById("hamburger");
-
-const menuPanel = document.getElementById("menu-panel");
-
-if (hamburger && menuPanel) {
-  hamburger.addEventListener("click", () => {
-    menuPanel.classList.toggle("active");
-  });
-}
-
 /* ---------- ナビゲーション ---------- */
-
-const header = document.querySelector("header");
 
 const theme = document.querySelector("#theme");
 
@@ -184,4 +169,16 @@ function createProjectCard(project) {
   `;
 
   return card;
+}
+/* ==================================================
+   スマートフォン用ハンバーガーメニュー
+================================================== */
+
+const hamburger = document.getElementById("hamburger");
+const header = document.querySelector("header");
+
+if (hamburger && header) {
+  hamburger.addEventListener("click", () => {
+    header.classList.toggle("menu-open");
+  });
 }

@@ -19,7 +19,19 @@
 
   color: #2c3e50;
 }
+/* ==================================================
+   タイムテーブル本体
+   共通CSSの1画面セクション指定を打ち消す
+================================================== */
 
+.timetable-page section {
+  min-height: auto;
+  padding: 0;
+}
+.stage-section,
+.other-section {
+  padding: 30px;
+}
 /* ==================================================
    メイン
 ================================================== */
@@ -29,7 +41,7 @@
 
   margin: 0 auto;
 
-  padding: 150px 0 100px;
+  padding: 100px 0 80px;
 }
 
 /* ==================================================
@@ -38,8 +50,6 @@
 
 .page-heading {
   text-align: center;
-
-  margin-bottom: 55px;
 }
 
 .page-heading-small {
@@ -88,7 +98,7 @@
 .date-section {
   width: 100%;
 
-  margin-bottom: 45px;
+  margin-bottom: 15px;
 }
 
 .date-tabs {
@@ -426,54 +436,31 @@
    その他の企画カード
 ================================================== */
 
-.event-card {
-  position: relative;
-
+.timetable-card {
   display: flex;
-
   flex-direction: column;
 
-  min-width: 0;
+  min-height: 175px;
 
-  min-height: 210px;
+  padding: 18px 20px;
 
-  padding: 20px;
-
-  border: 1px solid rgba(0, 182, 182, 0.13);
-
-  border-radius: 20px;
+  border: 1px solid rgba(44, 62, 80, 0.12);
+  border-radius: 16px;
 
   background: rgba(255, 255, 255, 0.88);
 
-  color: #2c3e50;
+  box-shadow: 0 6px 20px rgba(40, 100, 120, 0.07);
 
   text-decoration: none;
-
-  box-shadow: 0 8px 24px rgba(40, 100, 120, 0.08);
-
-  overflow: hidden;
+  color: inherit;
 
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    background 0.25s ease;
 }
 
-.event-card::after {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 4px;
-
-  background: linear-gradient(90deg, #00b6b6, rgba(0, 182, 182, 0.25));
-}
-
-.event-card:hover {
+.timetable-card:hover {
   transform: translateY(-5px);
 
   border-color: rgba(0, 182, 182, 0.32);
@@ -613,7 +600,7 @@
   transition: transform 0.2s ease;
 }
 
-.event-card:hover .event-link {
+.timetable-card:hover .event-link {
   transform: translateX(4px);
 }
 
@@ -857,7 +844,7 @@
     gap: 12px;
   }
 
-  .event-card {
+  .timetable-card {
     min-height: auto;
 
     padding: 17px 16px;
