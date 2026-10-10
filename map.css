@@ -1,26 +1,33 @@
 /* ========================================
-   校内マップ
+   校内マップページ
 ======================================== */
 
 .map-page {
   min-height: 100vh;
-  padding: 120px 6vw 100px;
+  padding: 140px 5vw 100px;
 }
+
+/* ========================================
+   ページタイトル
+======================================== */
 
 .map-hero {
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 }
 
 .map-hero h1 {
   font-family: "Shippori Mincho", serif;
   font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 500;
   color: #2c3e50;
-  margin: 10px 0 20px;
+  margin: 10px 0 18px;
 }
 
-.map-hero p {
+.map-hero p:last-child {
+  font-family: "M PLUS 1p", sans-serif;
   color: #2c3e50;
+  font-size: 0.95rem;
 }
 
 .section-label {
@@ -31,35 +38,364 @@
   font-weight: 600;
 }
 
+/* ========================================
+   マップ
+======================================== */
+
 .campus-map-section {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .section-heading {
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 .section-heading h2 {
   font-family: "Shippori Mincho", serif;
   font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 500;
   color: #2c3e50;
   margin-top: 8px;
 }
 
+/* 白いカード */
+
 .campus-map-image {
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(44, 62, 80, 0.12);
+  padding: clamp(15px, 3vw, 30px);
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 24px;
+  box-shadow: 0 10px 35px rgba(44, 62, 80, 0.12);
 }
+
+/* マップ画像 */
 
 .campus-map-image img {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+/* ========================================
+   来場者へのお願い：リスト
+======================================== */
+
+.visitor-card ul,
+.visitor-card ol {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.visitor-card li {
+  font-family: "M PLUS 1p", sans-serif;
+  color: #2c3e50;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  margin-bottom: 8px;
+}
+
+.visitor-card p {
+  margin-bottom: 18px;
+}
+
+.visitor-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* 重要事項 */
+
+.visitor-card-important {
+  border-top: 4px solid #00b6b6;
+}
+
+.visitor-card-alcohol {
+  border-top: 4px solid #00b6b6;
+}
+
+.visitor-warning {
+  font-weight: 600;
+}
+
+/* 本部案内 */
+
+.visitor-contact {
+  margin-top: 30px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(44, 62, 80, 0.1);
+}
+
+.visitor-contact h3 {
+  font-family: "Shippori Mincho", serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.visitor-contact p {
+  font-family: "M PLUS 1p", sans-serif;
+  color: #2c3e50;
+}
+
+/* ========================================
+   来場者の方へのお願い
+======================================== */
+
+.visitor-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 100px auto 0;
+}
+
+.visitor-section .section-heading {
+  margin-bottom: 40px;
+}
+
+.section-lead {
+  margin-top: 18px;
+  font-family: "M PLUS 1p", sans-serif;
+  color: #2c3e50;
+  font-size: 0.9rem;
+  line-height: 2;
+}
+
+/* ========================================
+   お願いカード
+======================================== */
+
+.visitor-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* カード本体 */
+
+.visitor-card {
+  position: relative;
+  padding: 32px 34px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(44, 62, 80, 0.1);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.visitor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(44, 62, 80, 0.15);
+}
+
+/* カード見出し */
+
+.visitor-card h3 {
+  position: relative;
+
+  margin: 0 0 22px;
+  padding-left: 18px;
+
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+/* 見出し左のアクセント */
+
+.visitor-card h3::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+
+  width: 4px;
+  height: 1.2em;
+
+  background: #00b6b6;
+  border-radius: 10px;
+}
+
+/* 本文 */
+
+.visitor-card p {
+  margin: 0 0 16px;
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 0.9rem;
+  line-height: 2;
+  color: #2c3e50;
+}
+
+/* ========================================
+   リスト
+======================================== */
+
+.visitor-card ul,
+.visitor-card ol {
+  margin: 0;
+  padding-left: 1.5em;
+}
+
+.visitor-card li {
+  margin-bottom: 10px;
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: #2c3e50;
+}
+
+.visitor-card li:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================
+   重要事項
+======================================== */
+
+.visitor-card-important,
+.visitor-card-alcohol {
+  border-top: 4px solid #00b6b6;
+}
+
+/* 注意文 */
+
+.visitor-warning {
+  padding: 14px 18px;
+
+  background: rgba(0, 182, 182, 0.08);
+  border-radius: 12px;
+
+  font-weight: 600;
+}
+
+/* お酒の手順 */
+
+.visitor-card-alcohol ol {
+  margin-top: 18px;
+}
+
+.visitor-card-alcohol ol li {
+  padding-left: 4px;
+}
+
+/* ========================================
+   本部案内
+======================================== */
+
+.visitor-contact {
+  margin-top: 30px;
+  padding: 34px 30px;
+
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow: 0 8px 28px rgba(44, 62, 80, 0.1);
+}
+
+.visitor-contact h3 {
+  margin: 0 0 10px;
+
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.visitor-contact p {
+  margin: 0;
+
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media (max-width: 768px) {
+  .visitor-section {
+    margin-top: 70px;
+  }
+
+  .visitor-cards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .visitor-card {
+    padding: 26px 24px;
+    border-radius: 18px;
+  }
+
+  .visitor-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+  }
+
+  .visitor-card p,
+  .visitor-card li {
+    font-size: 0.85rem;
+  }
+
+  .visitor-contact {
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+
+  .visitor-contact h3 {
+    font-size: 1.2rem;
+  }
+}
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media (max-width: 768px) {
+  .map-page {
+    padding: 110px 20px 70px;
+  }
+
+  .map-hero {
+    margin-bottom: 45px;
+  }
+
+  .map-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .map-hero p:last-child {
+    font-size: 0.85rem;
+  }
+
+  .section-heading {
+    margin-bottom: 20px;
+  }
+
+  .section-heading h2 {
+    font-size: 1.8rem;
+  }
+
+  .campus-map-image {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .campus-map-image img {
+    border-radius: 8px;
+  }
 }
