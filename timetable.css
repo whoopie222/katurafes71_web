@@ -19,19 +19,25 @@
 
   color: #2c3e50;
 }
-/* ==================================================
-   タイムテーブル本体
-   共通CSSの1画面セクション指定を打ち消す
-================================================== */
 
+/* style.css の全ページ共通 section 設定を、時間割ページでは解除する */
 .timetable-page section {
-  min-height: auto;
+  min-height: 0;
   padding: 0;
+  display: block;
+  justify-content: initial;
+  align-content: initial;
 }
-.stage-section,
-.other-section {
+
+.timetable-page .page-heading {
+  margin-bottom: 60px;
+}
+
+.timetable-page .stage-section,
+.timetable-page .other-section {
   padding: 30px;
 }
+
 /* ==================================================
    メイン
 ================================================== */
@@ -98,7 +104,7 @@
 .date-section {
   width: 100%;
 
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .date-tabs {
@@ -631,7 +637,7 @@
 ================================================== */
 
 .map-link-area {
-  margin-top: 45px;
+  margin-top: 90px;
 
   padding: 35px;
 
@@ -721,6 +727,11 @@
 ================================================== */
 
 @media (max-width: 650px) {
+  .timetable-page .stage-section,
+  .timetable-page .other-section {
+    padding: 20px 15px;
+  }
+
   .timetable-main {
     width: calc(100% - 24px);
 
@@ -893,7 +904,7 @@
   ------------------------------------------------ */
 
   .map-link-area {
-    margin-top: 25px;
+    margin-top: 50px;
 
     padding: 25px 15px;
   }

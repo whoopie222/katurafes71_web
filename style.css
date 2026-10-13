@@ -309,6 +309,33 @@ nav {
   background: rgba(0, 0, 0, 0.05);
 }
 
+/* Keep the header on the same system-font rendering used by the timetable. */
+header nav {
+  height: 70px;
+  padding: 0 40px;
+}
+
+header .logo p {
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+header .logo h1 {
+  font-family: serif;
+  font-size: 22px;
+}
+
+header .nav-bar > li > a {
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+header .dropdown-menu a {
+  font-family: sans-serif;
+}
+
 /* top contents */
 .hero-wrapper {
   display: flex;
