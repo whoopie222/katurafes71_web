@@ -1539,3 +1539,496 @@ footer a:hover {
     padding-bottom: 68px;
   }
 }
+
+/* ==================================================
+   第71回 桂川祭｜スマートフォン表示の調整
+   既存CSSの末尾に追加
+================================================== */
+
+@media screen and (max-width: 768px) {
+  /* ---------- ページ全体 ---------- */
+
+  html,
+  body {
+    width: 100%;
+    overflow-x: clip;
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+
+  section {
+    min-height: auto;
+    padding: 72px 20px;
+  }
+
+  /* ---------- ヘッダー ---------- */
+
+  header {
+    width: 100%;
+    height: 64px;
+  }
+
+  header nav {
+    width: 100%;
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  /* ---------- キービジュアル ---------- */
+
+  .top {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 80px 20px 48px;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .top::before {
+    background-attachment: scroll;
+    background-position: 55% center;
+  }
+
+  .hero-wrapper {
+    width: 100%;
+    gap: 24px;
+    align-items: flex-end;
+  }
+
+  .hero-title-group {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .hero-number {
+    font-size: clamp(22px, 6vw, 32px);
+    letter-spacing: 0.12em;
+  }
+
+  .hero-title {
+    font-size: clamp(42px, 12vw, 58px);
+    letter-spacing: 0.2em;
+  }
+
+  .hero-theme {
+    font-size: clamp(24px, 7vw, 34px);
+    letter-spacing: 0.12em;
+  }
+
+  .hero-catch {
+    font-size: clamp(19px, 5.5vw, 26px);
+    letter-spacing: 0.04em;
+  }
+
+  .hero-date {
+    font-size: clamp(18px, 4.8vw, 26px);
+    white-space: nowrap;
+  }
+
+  .date {
+    font-size: 0.65em;
+  }
+
+  /* ---------- テーマ ---------- */
+
+  .theme {
+    min-height: 100svh;
+    padding: 72px 20px;
+  }
+
+  .theme-h {
+    font-size: clamp(30px, 8vw, 40px);
+    letter-spacing: 0.2em;
+    margin-bottom: 24px;
+  }
+
+  .theme-centence {
+    font-size: clamp(15px, 4vw, 18px);
+    letter-spacing: 0.1em;
+    line-height: 2.2;
+  }
+
+  /* ---------- 扉のスクロール演出 ---------- */
+
+  .door-transition {
+    height: 220vh;
+  }
+
+  .door-stage {
+    height: 100svh;
+  }
+
+  .door-message {
+    width: 90%;
+    padding: 0 12px;
+  }
+
+  .door-container {
+    width: min(86vw, 400px);
+    max-width: 100%;
+  }
+
+  .festival-message {
+    width: 90%;
+    max-width: 100%;
+    padding: 0 12px;
+    text-align: center;
+  }
+
+  /* ---------- みどころ ---------- */
+
+  .pickupevents {
+    padding: 72px 20px;
+  }
+
+  .event-header {
+    margin-bottom: 32px;
+  }
+
+  .event-al {
+    padding-left: 0;
+    font-size: clamp(28px, 8vw, 38px);
+  }
+
+  .pickupevent-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    justify-items: center;
+  }
+
+  .door-wrapper {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .event-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .pickup-img img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ---------- 委員長メッセージ ---------- */
+
+  .chairperson-message {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 20px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+  }
+
+  .message-text {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+
+  .message-role {
+    font-size: 14px;
+  }
+
+  .message-name {
+    font-size: 22px;
+  }
+
+  /* ---------- 扉の案内エリア ---------- */
+
+  .doors {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 64px 20px;
+  }
+
+  /* ---------- アクセス ---------- */
+
+  .access {
+    padding: 64px 20px;
+    align-items: stretch;
+  }
+
+  .access-header {
+    align-self: flex-start;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-left: 0;
+  }
+
+  .access-al {
+    padding-left: 0;
+    font-size: clamp(30px, 8vw, 40px);
+  }
+
+  .access-contents {
+    flex-direction: column;
+    gap: 24px;
+    margin: 28px 0 0;
+  }
+
+  .university-info {
+    padding-left: 0;
+  }
+
+  .university-info h3 {
+    font-size: 24px;
+  }
+
+  .university-info p {
+    font-size: 14px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+  }
+
+  .transportation-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .access-map {
+    width: 100%;
+    min-height: 280px;
+  }
+
+  .access-map iframe {
+    display: block;
+    width: 100%;
+    height: 280px;
+    border: 0;
+  }
+
+  /* ---------- フッター ---------- */
+
+  .footer {
+    padding: 48px 24px 24px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .footer-column {
+    width: 100%;
+    min-width: 0;
+    padding-left: 16px;
+  }
+
+  .footer-column h3 {
+    font-size: 18px;
+  }
+
+  .footer-column a,
+  .footer-column p {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+
+  .sns img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .copyright {
+    margin-top: 48px;
+    font-size: 11px;
+  }
+}
+
+/* ========================================
+   スマートフォン表示の追加修正
+======================================== */
+
+@media screen and (max-width: 768px) {
+  /* ① Pickup Events の見出しが横にはみ出さないようにする */
+  .pickupevents {
+    width: 100%;
+    min-width: 0;
+    overflow-x: clip;
+  }
+
+  .event-header {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 18px;
+    box-sizing: border-box;
+  }
+
+  .event-al {
+    max-width: 100%;
+    padding-left: 0;
+    font-size: clamp(27px, 7.5vw, 38px);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+    box-sizing: border-box;
+  }
+
+  /* ② Pickup Events の扉と背後のカードの横幅を統一 */
+  .pickupevent-cards {
+    width: 100%;
+    padding-inline: 18px;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .pickupevent-cards .door-wrapper {
+    width: min(100%, 300px);
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .pickupevent-cards .event-card,
+  .pickupevent-cards .event-card-back {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 50% 50% 0 0 / 28% 28% 0 0;
+  }
+
+  .pickupevent-cards .event-card {
+    min-width: 0;
+  }
+
+  .pickupevent-cards .event-card-back {
+    height: 100%;
+  }
+
+  /* ③ 委員長メッセージに左右の余白を確保 */
+  .chairperson-message {
+    width: 100%;
+    padding: 48px 22px;
+    box-sizing: border-box;
+  }
+
+  .chairperson-message .message-text {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+    line-height: 2;
+    overflow-wrap: anywhere;
+    box-sizing: border-box;
+  }
+
+  .chairperson-message .chairperson {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ④ 委員長メッセージ下の扉を3つ横並びにする */
+  .doors {
+    width: 100%;
+    padding: 36px 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 8px;
+    box-sizing: border-box;
+  }
+
+  .doors .door-wrapper {
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
+    max-width: none;
+    box-sizing: border-box;
+  }
+
+  .doors .door,
+  .doors .door-back {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .doors .door {
+    border-radius: 50% 50% 0 0 / 22% 22% 0 0;
+    overflow: hidden;
+  }
+
+  .doors .door img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .doors .door p {
+    font-size: clamp(9px, 2.6vw, 12px);
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  /* ⑤ フッター下に余分な空白ができないようにする */
+  body {
+    padding-bottom: 0;
+  }
+
+  .footer {
+    margin-bottom: 0;
+    padding-bottom: calc(30px + 68px + env(safe-area-inset-bottom));
+  }
+
+  .footer .copyright {
+    margin-bottom: 0;
+  }
+
+  /* ⑥ 青空背景の固定表示を維持する */
+  body {
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .top::before {
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  /* ⑦ スマホ用ナビを画面下部に固定する */
+  /*
+    header の transform が fixed ナビの基準になるのを防ぐ。
+    スマホではヘッダーの縦移動アニメーションを止める。
+  */
+  header,
+  header.show {
+    transform: none !important;
+  }
+
+  header .mobile-bottom-nav {
+    position: fixed !important;
+    top: auto !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    width: 100%;
+    height: calc(68px + env(safe-area-inset-bottom));
+    margin: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    z-index: 2000;
+  }
+
+  header .mobile-bottom-nav a {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
