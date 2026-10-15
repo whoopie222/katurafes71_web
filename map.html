@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Shippori+Mincho&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body>
     <header>
@@ -117,15 +118,17 @@
       <!-- スマホ用の下部ナビゲーション -->
       <nav class="mobile-bottom-nav" aria-label="主要ページ">
         <a href="event.html">
-          <span class="bottom-nav-icon">▦</span>
+          <i data-lucide="ticket" class="bottom-nav-icon"></i>
           <span>企画</span>
         </a>
+
         <a href="timetable.html">
-          <span class="bottom-nav-icon">◷</span>
+          <i data-lucide="clock" class="bottom-nav-icon"></i>
           <span>タイムテーブル</span>
         </a>
+
         <a href="map.html">
-          <span class="bottom-nav-icon">⌖</span>
+          <i data-lucide="map-pinned" class="bottom-nav-icon"></i>
           <span>マップ</span>
         </a>
       </nav>
@@ -236,5 +239,10 @@
       </section>
     </main>
     <script src="script.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
   </body>
 </html>
