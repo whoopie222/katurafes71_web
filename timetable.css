@@ -937,3 +937,40 @@
     left: 60px;
   }
 }
+
+/* ========================================
+   タイムテーブル：フッターの幅と位置を修正
+======================================== */
+
+.timetable-main > .footer {
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   タイムテーブル：フッターを下端に配置
+======================================== */
+
+body.timetable-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.timetable-page > header {
+  flex-shrink: 0;
+}
+
+body.timetable-page > main.timetable-main {
+  flex: 1 0 auto;
+  width: min(1500px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+body.timetable-page > main.timetable-main > .footer {
+  flex-shrink: 0;
+}

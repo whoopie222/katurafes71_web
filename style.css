@@ -2407,3 +2407,17 @@ footer a:hover {
     padding-bottom: 100px;
   }
 }
+
+/* ========================================
+   タイムテーブル・校内マップのフッター修正
+======================================== */
+
+.timetable-main > .footer,
+.map-page > .footer {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-right: 0;
+  flex-shrink: 0;
+}
