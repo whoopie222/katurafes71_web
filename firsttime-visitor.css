@@ -1913,3 +1913,9 @@ nav {
     display: none !important;
   }
 }
+/* 初めての方へ：ハンバーガーメニューを開いたとき */
+@media (max-width: 900px) {
+  .firsttime-header.menu-open .nav-bar {
+    display: flex !important;
+  }
+}
