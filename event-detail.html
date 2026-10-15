@@ -32,7 +32,23 @@
           <p>第71回</p>
           <h1>桂川祭</h1>
         </div>
-        <ul class="nav-bar">
+
+        <!-- スマホ用ハンバーガーボタン -->
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="main-nav"
+          type="button"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- 共通ナビゲーション -->
+        <ul class="nav-bar" id="main-nav">
           <li class="dropdown">
             <a href="index.html#katurafes" class="gothic">桂川祭について</a>
             <ul class="dropdown-menu">
@@ -48,51 +64,78 @@
               <li><a href="index.html#access" class="gothic">アクセス</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="event.html" class="gothic">企画</a></li>
+
+          <li class="dropdown">
+            <a href="event.html" class="gothic">企画</a>
+          </li>
+
           <li class="dropdown">
             <a href="timetable.html" class="gothic">タイムテーブル</a>
           </li>
+
           <li class="dropdown">
             <a href="firsttime-visitor.html" class="gothic">初めての方へ</a>
             <ul class="dropdown-menu">
               <li>
-                <a href="firsttime-visitor.html#katurafes-hitory" class="gothic"
-                  >桂川祭とは</a
+                <a
+                  href="firsttime-visitor.html#katurafes-hitory"
+                  class="gothic"
                 >
+                  桂川祭とは
+                </a>
               </li>
               <li>
-                <a href="firsttime-visitor.html#katurahes-state" class="gothic"
-                  >近年の桂川祭</a
-                >
+                <a href="firsttime-visitor.html#katurahes-state" class="gothic">
+                  近年の桂川祭
+                </a>
               </li>
               <li>
                 <a
                   href="firsttime-visitor.html#katurafes71-state"
                   class="gothic"
-                  >今年の桂川祭</a
                 >
+                  今年の桂川祭
+                </a>
               </li>
               <li>
-                <a href="firsttime-visitor.html#beloging" class="gothic"
-                  >持ち物</a
-                >
+                <a href="firsttime-visitor.html#beloging" class="gothic">
+                  持ち物
+                </a>
               </li>
             </ul>
           </li>
+
           <li class="dropdown">
             <a href="QandA.html" class="gothic">Q&A</a>
           </li>
+
           <li class="dropdown">
             <a href="map.html" class="gothic">校内マップ</a>
             <ul class="dropdown-menu">
               <li>
-                <a href="map.html#for-visitor" class="gothic"
-                  >来場者の方へのお願い</a
-                >
+                <a href="map.html#for-visitor" class="gothic">
+                  来場者の方へのお願い
+                </a>
               </li>
             </ul>
           </li>
         </ul>
+      </nav>
+
+      <!-- スマホ用の下部ナビゲーション -->
+      <nav class="mobile-bottom-nav" aria-label="主要ページ">
+        <a href="event.html">
+          <span class="bottom-nav-icon">▦</span>
+          <span>企画</span>
+        </a>
+        <a href="timetable.html">
+          <span class="bottom-nav-icon">◷</span>
+          <span>タイムテーブル</span>
+        </a>
+        <a href="map.html">
+          <span class="bottom-nav-icon">⌖</span>
+          <span>マップ</span>
+        </a>
       </nav>
     </header>
 

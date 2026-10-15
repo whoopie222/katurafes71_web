@@ -782,12 +782,6 @@ nav {
     gap: 10px;
   }
 
-  .nav-bar li:nth-child(4),
-  .nav-bar li:nth-child(5),
-  .nav-bar li:nth-child(6) {
-    display: none;
-  }
-
   .events-page .search-page {
     height: auto;
     min-height: 100vh;
